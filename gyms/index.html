@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Never Miss Another Gym Lead | Martial Solutions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; line-height: 1.6; color: #1a1a2e; background: #ffffff; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        
+        .hero {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 80px 0;
+        }
+        .hero-content { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .hero h1 { font-size: 3rem; font-weight: 800; line-height: 1.1; margin-bottom: 20px; }
+        .hero h1 span { color: #e91e63; }
+        .hero p { font-size: 1.25rem; opacity: 0.9; margin-bottom: 30px; }
+        
+        .cta-button {
+            display: inline-block;
+            background: #e91e63;
+            color: white;
+            padding: 18px 40px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        .cta-button:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(0,0,0,0.2); filter: brightness(1.1); }
+        .cta-secondary { display: block; margin-top: 15px; color: rgba(255,255,255,0.7); font-size: 0.9rem; }
+        
+        .demo-box {
+            background: rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 40px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .demo-box h3 { font-size: 1.5rem; margin-bottom: 20px; }
+        
+        .form-group { margin-bottom: 15px; }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 15px 20px;
+            border-radius: 8px;
+            border: none;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 18px;
+            background: #e91e63;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .submit-btn:hover { filter: brightness(1.1); transform: translateY(-2px); }
+        .submit-btn:disabled { opacity: 0.7; cursor: not-allowed; }
+        
+        .demo-note { font-size: 0.85rem; opacity: 0.7; margin-top: 15px; text-align: center; }
+        .success-message { 
+            background: #4caf50; 
+            color: white; 
+            padding: 20px; 
+            border-radius: 8px; 
+            text-align: center;
+            display: none;
+        }
+        .success-message.show { display: block; }
+        
+        .pain-section { padding: 80px 0; background: #f8f9fa; }
+        .pain-section h2 { text-align: center; font-size: 2.5rem; margin-bottom: 50px; }
+        .pain-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        .pain-card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+        .pain-card .icon { font-size: 2.5rem; margin-bottom: 15px; }
+        .pain-card h3 { font-size: 1.25rem; margin-bottom: 10px; }
+        .pain-card p { color: #666; }
+        
+        .solution-section { padding: 80px 0; }
+        .solution-section h2 { text-align: center; font-size: 2.5rem; margin-bottom: 20px; }
+        .solution-section .subtitle { text-align: center; font-size: 1.2rem; color: #666; margin-bottom: 50px; max-width: 700px; margin-left: auto; margin-right: auto; }
+        .feature-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; }
+        .feature-item { display: flex; gap: 20px; }
+        .feature-icon { width: 60px; height: 60px; background: #e91e6320; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0; }
+        .feature-item h3 { font-size: 1.2rem; margin-bottom: 8px; }
+        .feature-item p { color: #666; }
+        
+        .proof-section { padding: 80px 0; background: #1a1a2e; color: white; }
+        .proof-section h2 { text-align: center; font-size: 2rem; margin-bottom: 50px; }
+        .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; text-align: center; }
+        .stat-item h3 { font-size: 3rem; font-weight: 800; color: #e91e63; margin-bottom: 10px; }
+        .stat-item p { opacity: 0.8; }
+        
+        .testimonial-section { padding: 80px 0; background: #f8f9fa; }
+        .testimonial-card { max-width: 800px; margin: 0 auto; text-align: center; }
+        .testimonial-card blockquote { font-size: 1.5rem; font-style: italic; color: #333; margin-bottom: 30px; }
+        .testimonial-author { font-weight: 600; }
+        .testimonial-role { color: #666; }
+        
+        .cta-section { padding: 100px 0; background: linear-gradient(135deg, #e91e63 0%, #e91e63dd 100%); color: white; text-align: center; }
+        .cta-section h2 { font-size: 2.5rem; margin-bottom: 20px; }
+        .cta-section p { font-size: 1.25rem; opacity: 0.9; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .cta-section .cta-button { background: white; color: #e91e63; }
+        
+        footer { padding: 40px 0; background: #1a1a2e; color: rgba(255,255,255,0.7); text-align: center; }
+        
+        @media (max-width: 968px) {
+            .hero-content, .pain-grid, .feature-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2.5rem; }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .form-row { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div>
+                    <h1>Turn Every Call Into a Gym Tour</h1>
+                    <p>When someone calls asking about membership, they're motivated RIGHT NOW. Miss that call and they'll join the gym down the street. Our AI books tours 24/7.</p>
+                    <a href="#demo" class="cta-button">Get Your AI Receptionist →</a>
+                    <span class="cta-secondary">Free demo • Setup in 24 hours</span>
+                </div>
+                <div class="demo-box" id="demo">
+                    <h3>🎧 Experience It Yourself</h3>
+                    <p style="margin-bottom: 20px; opacity: 0.8;">Enter your info and we'll call you in 30 seconds to demo our AI receptionist.</p>
+                    
+                    <div id="demo-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>First Name</label>
+                                <input type="text" id="firstName" placeholder="John" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Last Name</label>
+                                <input type="text" id="lastName" placeholder="Smith" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                            <input type="tel" id="phone" placeholder="(555) 123-4567" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" id="email" placeholder="john@company.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Company Name</label>
+                            <input type="text" id="company" placeholder="Your Gym Company">
+                        </div>
+                        <button type="button" class="submit-btn" onclick="submitForm()">
+                            📞 Call Me Now
+                        </button>
+                    </div>
+                    
+                    <div id="success-message" class="success-message">
+                        <h3>🎉 Calling you now!</h3>
+                        <p>Your phone should ring in about 30 seconds. Pick up to experience our AI receptionist!</p>
+                    </div>
+                    
+                    <p class="demo-note">Or call our demo line: <strong>(719) 745-4242</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="pain-section">
+        <div class="container">
+            <h2>The Problem Every Gym Business Knows</h2>
+            <div class="pain-grid">
+                
+                <div class="pain-card">
+                    <div class="icon">📞</div>
+                    <h3>Front Desk is Busy</h3>
+                    <p>Your staff is helping members, giving tours, cleaning. Calls go to voicemail.</p>
+                </div>
+                <div class="pain-card">
+                    <div class="icon">🌙</div>
+                    <h3>People Browse After Hours</h3>
+                    <p>They're researching gyms at 10 PM. Can you answer then?</p>
+                </div>
+                <div class="pain-card">
+                    <div class="icon">💸</div>
+                    <h3>Every Lead Has Value</h3>
+                    <p>Lifetime value of a gym member is $1,000+. Don't lose them to a missed call.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="solution-section">
+        <div class="container">
+            <h2>Your 24/7 AI Receptionist</h2>
+            <p class="subtitle">An AI that answers every call, qualifies leads, books appointments, and sounds completely natural.</p>
+            <div class="feature-grid">
+                
+                <div class="feature-item">
+                    <div class="feature-icon">⚡</div>
+                    <div>
+                        <h3>Instant Engagement</h3>
+                        <p>Greets callers warmly and gets them excited about starting their fitness journey.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🎯</div>
+                    <div>
+                        <h3>Understands Their Goals</h3>
+                        <p>Asks about fitness goals to match them with the right membership and services.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">📅</div>
+                    <div>
+                        <h3>Books Tours & Trials</h3>
+                        <p>Schedules tours and free trials directly into your system.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">💪</div>
+                    <div>
+                        <h3>Overcomes Objections</h3>
+                        <p>Handles 'I need to think about it' with warmth, not pressure.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="proof-section">
+        <div class="container">
+            <h2>The Numbers Don't Lie</h2>
+            <div class="stats-grid">
+                <div class="stat-item"><h3>100%</h3><p>Calls Answered</p></div>
+                <div class="stat-item"><h3>&lt;3s</h3><p>Average Answer Time</p></div>
+                <div class="stat-item"><h3>24/7</h3><p>Availability</p></div>
+                <div class="stat-item"><h3>70%</h3><p>Cost Savings vs. Staff</p></div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="testimonial-section">
+        <div class="container">
+            <div class="testimonial-card">
+                <blockquote>"We were missing 40% of calls during busy times. Now every single inquiry gets handled. Tour bookings are up 50%."</blockquote>
+                <p class="testimonial-author">Lisa Park</p>
+                <p class="testimonial-role">Owner, FitLife Gym</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Stop Losing Membership Leads?</h2>
+            <p>Join gym businesses that never miss another lead. Setup takes less than a day.</p>
+            <a href="#demo" class="cta-button">Get Your AI Receptionist →</a>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p>© 2026 Martial Solutions. Never miss another call.</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Configuration
+        const CONFIG = {
+            ghlLocationId: 'jTXBaqyDhVnqj1Hpd4Hc',
+            vertical: 'gyms',
+            demoPhone: '+17197454242',
+            retellAgentId: 'agent_3bc7593bdc7da6d73e31de7d4f'
+        };
+        
+        // Format phone number
+        function formatPhone(phone) {
+            const cleaned = phone.replace(/\D/g, '');
+            if (cleaned.length === 10) {
+                return '+1' + cleaned;
+            } else if (cleaned.length === 11 && cleaned.startsWith('1')) {
+                return '+' + cleaned;
+            }
+            return '+1' + cleaned;
+        }
+        
+        // Submit form to GHL and trigger Retell call
+        async function submitForm() {
+            const btn = document.querySelector('.submit-btn');
+            btn.disabled = true;
+            btn.textContent = 'Submitting...';
+            
+            const data = {
+                firstName: document.getElementById('firstName').value,
+                lastName: document.getElementById('lastName').value,
+                phone: formatPhone(document.getElementById('phone').value),
+                email: document.getElementById('email').value,
+                companyName: document.getElementById('company').value,
+                source: 'Landing Page - ' + CONFIG.vertical,
+                tags: ['martial-solutions', 'demo-request', CONFIG.vertical]
+            };
+            
+            try {
+                // 1. Create contact in GHL
+                const ghlResponse = await fetch('/api/lead', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        ...data,
+                        locationId: CONFIG.ghlLocationId
+                    })
+                });
+                
+                // 2. Trigger Retell outbound call
+                const callResponse = await fetch('/api/demo-call', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        phone: data.phone,
+                        agentId: CONFIG.retellAgentId,
+                        firstName: data.firstName
+                    })
+                });
+                
+                // Show success
+                document.getElementById('demo-form').style.display = 'none';
+                document.getElementById('success-message').classList.add('show');
+                
+            } catch (error) {
+                console.error('Error:', error);
+                btn.disabled = false;
+                btn.textContent = '📞 Call Me Now';
+                alert('Something went wrong. Please try again or call us directly at (719) 745-4242');
+            }
+        }
+    </script>
+</body>
+</html>

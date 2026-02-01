@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "framework": null,
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/$1"
+    },
+    {
+      "src": "/(roofing|hvac|plumbing|solar|gyms|salons|bodywork)",
+      "dest": "/$1/index.html"
+    },
+    {
+      "src": "/",
+      "dest": "/index.html"
+    }
+  ],
+  "env": {
+    "GHL_API_KEY": "@ghl-api-key",
+    "GHL_LOCATION_ID": "@ghl-location-id",
+    "RETELL_API_KEY": "@retell-api-key"
+  }
+}
