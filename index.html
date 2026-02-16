@@ -3,102 +3,1141 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Martial Solutions - AI Receptionists for Service Businesses</title>
+    <title>Martial Solutions — AI Voice Agents for Service Businesses</title>
+    <meta name="description" content="Never miss another call. AI-powered voice agents that answer, qualify, and book — 24/7. Built for home service businesses.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary: #0f172a;
+            --secondary: #1e293b;
+            --accent: #3b82f6;
+            --accent-light: #60a5fa;
+            --text: #0f172a;
+            --text-muted: #64748b;
+            --text-light: #94a3b8;
+            --bg: #ffffff;
+            --bg-subtle: #f8fafc;
+            --border: #e2e8f0;
+            --success: #10b981;
+        }
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); min-height: 100vh; color: white; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
         
-        h1 { font-size: 3rem; font-weight: 800; text-align: center; margin-bottom: 20px; }
-        h1 span { color: #ff6b35; }
-        .subtitle { text-align: center; font-size: 1.25rem; opacity: 0.8; margin-bottom: 60px; max-width: 600px; margin-left: auto; margin-right: auto; }
-        
-        .verticals-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-        
-        .vertical-card {
-            background: rgba(255,255,255,0.1);
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text);
+            background: var(--bg);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 72px;
+        }
+
+        .nav-logo {
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-logo svg {
+            width: 32px;
+            height: 32px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-link {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9375rem;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+
+        .nav-link:hover {
+            color: var(--text);
+            background: var(--bg-subtle);
+        }
+
+        .nav-dropdown {
+            position: relative;
+        }
+
+        .nav-dropdown-trigger {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            cursor: pointer;
+        }
+
+        .nav-dropdown-trigger svg {
+            width: 16px;
+            height: 16px;
+            transition: transform 0.2s;
+        }
+
+        .nav-dropdown:hover .nav-dropdown-trigger svg {
+            transform: rotate(180deg);
+        }
+
+        .nav-dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            padding-top: 12px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.2s;
+        }
+
+        .nav-dropdown:hover .nav-dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .nav-dropdown-content {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 8px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            min-width: 220px;
+        }
+
+        .nav-dropdown-item {
+            display: block;
+            padding: 10px 14px;
+            color: var(--text);
+            text-decoration: none;
+            font-size: 0.9375rem;
+            border-radius: 8px;
+            transition: background 0.15s;
+        }
+
+        .nav-dropdown-item:hover {
+            background: var(--bg-subtle);
+        }
+
+        .nav-dropdown-item span {
+            display: block;
+            font-size: 0.8125rem;
+            color: var(--text-muted);
+            font-weight: 400;
+            margin-top: 2px;
+        }
+
+        .nav-cta {
+            background: var(--primary);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9375rem;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .nav-cta:hover {
+            background: var(--secondary);
+            transform: translateY(-1px);
+        }
+
+        /* Hero */
+        .hero {
+            padding: 160px 24px 100px;
+            background: linear-gradient(180deg, var(--bg-subtle) 0%, var(--bg) 100%);
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.15;
+            color: var(--primary);
+            margin-bottom: 24px;
+        }
+
+        .hero-content h1 span {
+            color: var(--accent);
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            margin-bottom: 32px;
+            max-width: 500px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 48px;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--primary);
+            color: white;
+            padding: 16px 28px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: all 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background: var(--secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(15,23,42,0.15);
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: white;
+            color: var(--text);
+            padding: 16px 28px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            border: 1px solid var(--border);
+            transition: all 0.2s;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--text-muted);
+            transform: translateY(-2px);
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+        }
+
+        .stat {
+            text-align: left;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+
+        /* Demo Card */
+        .demo-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+        }
+
+        .demo-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .demo-card p {
+            color: var(--text-muted);
+            margin-bottom: 24px;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--text);
+            margin-bottom: 6px;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: all 0.2s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(59,130,246,0.1);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 16px;
+            background: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-submit:hover {
+            background: var(--accent-light);
+            transform: translateY(-1px);
+        }
+
+        .demo-note {
+            text-align: center;
+            font-size: 0.8125rem;
+            color: var(--text-muted);
+            margin-top: 16px;
+        }
+
+        /* Problem Section */
+        .section {
+            padding: 100px 24px;
+        }
+
+        .section-dark {
+            background: var(--primary);
+            color: white;
+        }
+
+        .section-subtle {
+            background: var(--bg-subtle);
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px;
+        }
+
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .section-dark .section-header h2 {
+            color: white;
+        }
+
+        .section-header p {
+            font-size: 1.125rem;
+            color: var(--text-muted);
+        }
+
+        .section-dark .section-header p {
+            color: rgba(255,255,255,0.7);
+        }
+
+        /* Problem Cards */
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+
+        .problem-card {
+            background: white;
+            border: 1px solid var(--border);
             border-radius: 16px;
-            padding: 30px;
+            padding: 32px;
+        }
+
+        .problem-card-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--bg-subtle);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .problem-card-icon svg {
+            width: 24px;
+            height: 24px;
+            color: var(--accent);
+        }
+
+        .problem-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .problem-card p {
+            color: var(--text-muted);
+            font-size: 0.9375rem;
+        }
+
+        /* Solutions Grid */
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .solution-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 32px;
             text-decoration: none;
             color: white;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s;
         }
-        .vertical-card:hover {
-            transform: translateY(-5px);
-            background: rgba(255,255,255,0.15);
-            border-color: rgba(255,255,255,0.3);
+
+        .solution-card:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: rgba(255,255,255,0.2);
+            transform: translateY(-4px);
         }
-        
-        .vertical-icon { font-size: 3rem; margin-bottom: 20px; }
-        .vertical-card h3 { font-size: 1.5rem; margin-bottom: 10px; }
-        .vertical-card p { opacity: 0.7; font-size: 0.95rem; }
-        .vertical-card .phone { margin-top: 15px; font-weight: 600; color: #ff6b35; }
-        
-        footer { text-align: center; margin-top: 80px; opacity: 0.6; font-size: 0.9rem; }
+
+        .solution-card-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .solution-card-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .solution-card-icon svg {
+            width: 20px;
+            height: 20px;
+            color: var(--accent-light);
+        }
+
+        .solution-card h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+        }
+
+        .solution-card p {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9375rem;
+            margin-bottom: 16px;
+        }
+
+        .solution-card-phone {
+            font-size: 0.875rem;
+            color: var(--accent-light);
+            font-weight: 500;
+        }
+
+        /* How It Works */
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+        }
+
+        .step {
+            text-align: center;
+        }
+
+        .step-number {
+            width: 48px;
+            height: 48px;
+            background: var(--accent);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.25rem;
+            margin: 0 auto 20px;
+        }
+
+        .step h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .step p {
+            color: var(--text-muted);
+            font-size: 0.9375rem;
+        }
+
+        /* Testimonials */
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+        }
+
+        .testimonial-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 32px;
+        }
+
+        .testimonial-text {
+            font-size: 1.125rem;
+            line-height: 1.7;
+            color: var(--text);
+            margin-bottom: 24px;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .testimonial-avatar {
+            width: 48px;
+            height: 48px;
+            background: var(--bg-subtle);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+
+        .testimonial-info h4 {
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .testimonial-info p {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: var(--primary);
+            color: white;
+            padding: 100px 24px;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .cta-section p {
+            font-size: 1.125rem;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 32px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-section .btn-primary {
+            background: white;
+            color: var(--primary);
+        }
+
+        .cta-section .btn-primary:hover {
+            background: var(--bg-subtle);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--bg-subtle);
+            padding: 60px 24px 40px;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+        }
+
+        .footer-brand h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .footer-brand p {
+            color: var(--text-muted);
+            font-size: 0.9375rem;
+            max-width: 280px;
+        }
+
+        .footer-column h4 {
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+
+        .footer-column a {
+            display: block;
+            color: var(--text);
+            text-decoration: none;
+            font-size: 0.9375rem;
+            margin-bottom: 10px;
+            transition: color 0.2s;
+        }
+
+        .footer-column a:hover {
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 40px auto 0;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-container { grid-template-columns: 1fr; gap: 40px; }
+            .hero-content h1 { font-size: 2.75rem; }
+            .problem-grid { grid-template-columns: 1fr; }
+            .solutions-grid { grid-template-columns: repeat(2, 1fr); }
+            .steps-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-container { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero { padding: 120px 24px 60px; }
+            .hero-content h1 { font-size: 2.25rem; }
+            .hero-buttons { flex-direction: column; }
+            .hero-stats { flex-direction: column; gap: 20px; }
+            .section { padding: 60px 24px; }
+            .section-header h2 { font-size: 2rem; }
+            .solutions-grid { grid-template-columns: 1fr; }
+            .testimonial-grid { grid-template-columns: 1fr; }
+            .steps-grid { grid-template-columns: 1fr; gap: 24px; }
+            .footer-container { grid-template-columns: 1fr; gap: 40px; }
+            .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Never <span>Miss</span> Another Call</h1>
-        <p class="subtitle">AI-powered receptionists for service businesses. Answer every call, book appointments, and convert leads — 24/7.</p>
-        
-        <div class="verticals-grid">
-            <a href="/roofing" class="vertical-card">
-                <div class="vertical-icon">🏠</div>
-                <h3>Roofing</h3>
-                <p>Capture storm damage calls, book inspections, and never lose a lead to missed calls.</p>
-                <div class="phone">📞 (719) 361-9042</div>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">
+                <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="32" height="32" rx="8" fill="#0f172a"/>
+                    <path d="M10 12L16 8L22 12V20L16 24L10 20V12Z" stroke="white" stroke-width="2" fill="none"/>
+                    <circle cx="16" cy="16" r="3" fill="white"/>
+                </svg>
+                Martial Solutions
             </a>
             
-            <a href="/hvac" class="vertical-card">
-                <div class="vertical-icon">❄️</div>
-                <h3>HVAC</h3>
-                <p>Handle emergencies, schedule service calls, and manage peak season volume effortlessly.</p>
-                <div class="phone">📞 (719) 824-4206</div>
-            </a>
+            <div class="nav-links">
+                <div class="nav-dropdown">
+                    <a href="#solutions" class="nav-link nav-dropdown-trigger">
+                        Solutions
+                        <svg viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                        </svg>
+                    </a>
+                    <div class="nav-dropdown-menu">
+                        <div class="nav-dropdown-content">
+                            <a href="/roofing" class="nav-dropdown-item">
+                                Roofing
+                                <span>Storm damage, inspections, estimates</span>
+                            </a>
+                            <a href="/hvac" class="nav-dropdown-item">
+                                HVAC
+                                <span>Emergency calls, seasonal volume</span>
+                            </a>
+                            <a href="/plumbing" class="nav-dropdown-item">
+                                Plumbing
+                                <span>24/7 emergencies, dispatching</span>
+                            </a>
+                            <a href="/solar" class="nav-dropdown-item">
+                                Solar
+                                <span>Lead qualification, consultations</span>
+                            </a>
+                            <a href="/gyms" class="nav-dropdown-item">
+                                Gyms & Fitness
+                                <span>Tours, memberships, class bookings</span>
+                            </a>
+                            <a href="/salons" class="nav-dropdown-item">
+                                Salons
+                                <span>Appointments, stylist matching</span>
+                            </a>
+                            <a href="/bodywork" class="nav-dropdown-item">
+                                Massage & Bodywork
+                                <span>Session booking, availability</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <a href="#how-it-works" class="nav-link">How It Works</a>
+                <a href="#pricing" class="nav-link">Pricing</a>
+                <a href="#contact" class="nav-cta">Get Demo</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Never miss another <span>call</span>.</h1>
+                <p>AI voice agents that answer, qualify, and book appointments for your service business — 24 hours a day, 7 days a week.</p>
+                
+                <div class="hero-buttons">
+                    <a href="#demo" class="btn-primary">
+                        Get a Demo
+                        <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                        </svg>
+                    </a>
+                    <a href="tel:+17193619042" class="btn-secondary">
+                        <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                        </svg>
+                        Try it Live
+                    </a>
+                </div>
+
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-value">24/7</div>
+                        <div class="stat-label">Always available</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">3 sec</div>
+                        <div class="stat-label">Answer time</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">78%</div>
+                        <div class="stat-label">First-call conversion</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="demo-card" id="demo">
+                <h3>Experience it in 30 seconds</h3>
+                <p>Enter your phone number. We'll call you right now.</p>
+                
+                <form id="demo-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>First Name</label>
+                            <input type="text" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Last Name</label>
+                            <input type="text" name="lastName" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="tel" name="phone" placeholder="(555) 123-4567" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Industry</label>
+                        <select name="industry" required>
+                            <option value="">Select your industry</option>
+                            <option value="roofing">Roofing</option>
+                            <option value="hvac">HVAC</option>
+                            <option value="plumbing">Plumbing</option>
+                            <option value="solar">Solar</option>
+                            <option value="gyms">Gyms & Fitness</option>
+                            <option value="salons">Salons & Barbershops</option>
+                            <option value="bodywork">Massage & Bodywork</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-submit">Call Me Now</button>
+                </form>
+                <p class="demo-note">We'll call you in under 30 seconds</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Every missed call is a lost job</h2>
+                <p>Service businesses lose thousands in revenue each month to calls that go unanswered.</p>
+            </div>
+
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <div class="problem-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            <line x1="1" y1="1" x2="23" y2="23"/>
+                        </svg>
+                    </div>
+                    <h3>You're on the job</h3>
+                    <p>You can't answer when you're on a roof, under a sink, or with a client. By the time you call back, they've already booked someone else.</p>
+                </div>
+
+                <div class="problem-card">
+                    <div class="problem-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12 6 12 12 16 14"/>
+                        </svg>
+                    </div>
+                    <h3>After-hours calls</h3>
+                    <p>Emergencies don't wait for business hours. When your phone goes to voicemail at 9pm, that customer calls your competitor.</p>
+                </div>
+
+                <div class="problem-card">
+                    <div class="problem-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                    </div>
+                    <h3>Not enough staff</h3>
+                    <p>Hiring a receptionist costs $35k+/year. Training takes months. And they still can't answer every call.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Section -->
+    <section class="section section-dark" id="solutions">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Built for your industry</h2>
+                <p>Specialized voice agents trained on thousands of real calls in your vertical.</p>
+            </div>
+
+            <div class="solutions-grid">
+                <a href="/roofing" class="solution-card">
+                    <div class="solution-card-header">
+                        <div class="solution-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                                <polyline points="9 22 9 12 15 12 15 22"/>
+                            </svg>
+                        </div>
+                        <h3>Roofing</h3>
+                    </div>
+                    <p>Capture storm damage calls, book inspections, and never lose a lead.</p>
+                    <div class="solution-card-phone">Call demo: (719) 361-9042</div>
+                </a>
+
+                <a href="/hvac" class="solution-card">
+                    <div class="solution-card-header">
+                        <div class="solution-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"/>
+                            </svg>
+                        </div>
+                        <h3>HVAC</h3>
+                    </div>
+                    <p>Handle emergencies and seasonal volume without missing a beat.</p>
+                    <div class="solution-card-phone">Call demo: (719) 824-4206</div>
+                </a>
+
+                <a href="/plumbing" class="solution-card">
+                    <div class="solution-card-header">
+                        <div class="solution-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            </svg>
+                        </div>
+                        <h3>Plumbing</h3>
+                    </div>
+                    <p>Answer emergency calls instantly and guide customers through shutoffs.</p>
+                    <div class="solution-card-phone">Call demo: (719) 738-8175</div>
+                </a>
+
+                <a href="/solar" class="solution-card">
+                    <div class="solution-card-header">
+                        <div class="solution-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="5"/>
+                                <line x1="12" y1="1" x2="12" y2="3"/>
+                                <line x1="12" y1="21" x2="12" y2="23"/>
+                                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                                <line x1="1" y1="12" x2="3" y2="12"/>
+                                <line x1="21" y1="12" x2="23" y2="12"/>
+                                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                            </svg>
+                        </div>
+                        <h3>Solar</h3>
+                    </div>
+                    <p>Qualify leads, explain incentives, and book consultations.</p>
+                    <div class="solution-card-phone">Call demo: (719) 417-9461</div>
+                </a>
+
+                <a href="/gyms" class="solution-card">
+                    <div class="solution-card-header">
+                        <div class="solution-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 8h1a4 4 0 0 1 0 8h-1"/>
+                                <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/>
+                                <line x1="6" y1="1" x2="6" y2="4"/>
+                                <line x1="10" y1="1" x2="10" y2="4"/>
+                                <line x1="14" y1="1" x2="14" y2="4"/>
+                            </svg>
+                        </div>
+                        <h3>Gyms & Fitness</h3>
+                    </div>
+                    <p>Book tours, answer membership questions, convert interest to sign-ups.</p>
+                    <div class="solution-card-phone">Call demo: (719) 745-4242</div>
+                </a>
+
+                <a href="/salons" class="solution-card">
+                    <div class="solution-card-header">
+                        <div class="solution-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="8" r="7"/>
+                                <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/>
+                            </svg>
+                        </div>
+                        <h3>Salons</h3>
+                    </div>
+                    <p>Book appointments, match clients with stylists, keep chairs full.</p>
+                    <div class="solution-card-phone">Call demo: (719) 800-7671</div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="section section-subtle" id="how-it-works">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Live in 48 hours</h2>
+                <p>We handle everything. You just keep doing what you do.</p>
+            </div>
+
+            <div class="steps-grid">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Quick Discovery</h3>
+                    <p>15-minute call to understand your business, services, and how you want calls handled.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>We Build It</h3>
+                    <p>We train your AI agent on your business, pricing, and FAQs. Takes 24-48 hours.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Test Together</h3>
+                    <p>Call your agent, refine the responses, make sure it sounds like your best employee.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Go Live</h3>
+                    <p>Forward your calls or get a new number. Every call answered, every lead captured.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>What our clients say</h2>
+                <p>Real results from real service businesses.</p>
+            </div>
+
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"I was skeptical about AI answering my calls. But customers don't even know the difference — they just know someone answered and helped them. My bookings are up 30%."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">DL</div>
+                        <div class="testimonial-info">
+                            <h4>Dante Liberato</h4>
+                            <p>The Den Somatics, Manitou Springs</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Before, I'd miss calls when I was with clients. Now every call gets answered, and they're already booked by the time I'm done. It's like having a receptionist I don't have to pay salary."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">AM</div>
+                        <div class="testimonial-info">
+                            <h4>Andria Mascareñas</h4>
+                            <p>Eden Salon, Colorado Springs</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>Ready to never miss another call?</h2>
+        <p>Get a personalized demo for your business in 30 seconds.</p>
+        <a href="#demo" class="btn-primary">
+            Get Your Demo
+            <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+            </svg>
+        </a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h3>Martial Solutions</h3>
+                <p>AI voice agents for service businesses. Answer every call, book every job, grow without limits.</p>
+            </div>
             
-            <a href="/plumbing" class="vertical-card">
-                <div class="vertical-icon">🔧</div>
-                <h3>Plumbing</h3>
-                <p>Answer emergency calls instantly, guide customers through shutoffs, and dispatch fast.</p>
-                <div class="phone">📞 (719) 738-8175</div>
-            </a>
+            <div class="footer-column">
+                <h4>Solutions</h4>
+                <a href="/roofing">Roofing</a>
+                <a href="/hvac">HVAC</a>
+                <a href="/plumbing">Plumbing</a>
+                <a href="/solar">Solar</a>
+            </div>
             
-            <a href="/solar" class="vertical-card">
-                <div class="vertical-icon">☀️</div>
-                <h3>Solar</h3>
-                <p>Qualify leads, explain incentives, and book consultations while interest is hot.</p>
-                <div class="phone">📞 (719) 417-9461</div>
-            </a>
+            <div class="footer-column">
+                <h4>More Industries</h4>
+                <a href="/gyms">Gyms & Fitness</a>
+                <a href="/salons">Salons</a>
+                <a href="/bodywork">Massage & Bodywork</a>
+            </div>
             
-            <a href="/gyms" class="vertical-card">
-                <div class="vertical-icon">💪</div>
-                <h3>Gyms & Fitness</h3>
-                <p>Book tours, answer membership questions, and convert interest into sign-ups.</p>
-                <div class="phone">📞 (719) 745-4242</div>
-            </a>
-            
-            <a href="/salons" class="vertical-card">
-                <div class="vertical-icon">💇</div>
-                <h3>Salons & Barbershops</h3>
-                <p>Book appointments, match clients with stylists, and keep your chairs full.</p>
-                <div class="phone">📞 (719) 800-7671</div>
-            </a>
-            
-            <a href="/bodywork" class="vertical-card">
-                <div class="vertical-icon">💆</div>
-                <h3>Massage & Bodywork</h3>
-                <p>Book sessions while you're with clients. Never miss a booking opportunity.</p>
-                <div class="phone">📞 (719) 417-5390</div>
-            </a>
+            <div class="footer-column">
+                <h4>Company</h4>
+                <a href="#how-it-works">How It Works</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#contact">Contact</a>
+            </div>
         </div>
         
-        <footer>
-            <p>© 2026 Martial Solutions. All rights reserved.</p>
-        </footer>
-    </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Martial Solutions. All rights reserved.</p>
+            <p>Colorado Springs, CO</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Form handling (placeholder)
+        document.getElementById('demo-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Add your form submission logic here
+            alert('Demo request submitted! We\'ll call you in under 30 seconds.');
+        });
+    </script>
 </body>
 </html>

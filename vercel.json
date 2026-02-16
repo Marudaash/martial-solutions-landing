@@ -1,6 +1,8 @@
 {
   "version": 2,
   "framework": null,
+  "buildCommand": "",
+  "outputDirectory": ".",
   "routes": [
     {
       "src": "/api/(.*)",
@@ -14,10 +16,5 @@
       "src": "/",
       "dest": "/index.html"
     }
-  ],
-  "env": {
-    "GHL_API_KEY": "@ghl-api-key",
-    "GHL_LOCATION_ID": "@ghl-location-id",
-    "RETELL_API_KEY": "@retell-api-key"
-  }
+  ]
 }
