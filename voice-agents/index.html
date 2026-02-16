@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice AI Agents by Industry | Martial Solutions</title>
+    <meta name="description" content="AI voice agents tailored to your industry. Try our live demos for plumbing, HVAC, roofing, solar, salons, gyms, and massage therapy.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --secondary: #1e293b;
+            --accent: #3b82f6;
+            --accent-light: #60a5fa;
+            --text: #0f172a;
+            --text-muted: #64748b;
+            --bg: #ffffff;
+            --bg-subtle: #f8fafc;
+            --border: #e2e8f0;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, sans-serif; color: var(--text); background: var(--bg); line-height: 1.6; }
+        
+        .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); }
+        .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 72px; }
+        .nav-logo { font-weight: 700; font-size: 1.25rem; color: var(--primary); text-decoration: none; display: flex; align-items: center; gap: 10px; }
+        .nav-logo svg { width: 32px; height: 32px; }
+        .nav-links { display: flex; align-items: center; gap: 8px; }
+        .nav-link { color: var(--text-muted); text-decoration: none; font-size: 0.9375rem; font-weight: 500; padding: 8px 16px; border-radius: 6px; transition: all 0.2s; }
+        .nav-link:hover { color: var(--text); background: var(--bg-subtle); }
+        .nav-cta { background: var(--primary); color: white; padding: 10px 20px; border-radius: 8px; font-weight: 600; text-decoration: none; transition: all 0.2s; }
+        .nav-cta:hover { background: var(--secondary); }
+
+        .hero { padding: 140px 24px 80px; background: var(--bg-subtle); text-align: center; }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: 3rem; font-weight: 700; margin-bottom: 16px; }
+        .hero p { font-size: 1.25rem; color: var(--text-muted); max-width: 600px; margin: 0 auto; }
+
+        .section { padding: 80px 24px; }
+        .section-container { max-width: 1200px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: 48px; }
+        .section-header h2 { font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 12px; }
+        .section-header p { color: var(--text-muted); }
+
+        .verticals-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+        .vertical-card { background: white; border: 1px solid var(--border); border-radius: 16px; padding: 32px; text-decoration: none; color: var(--text); transition: all 0.3s; }
+        .vertical-card:hover { border-color: var(--accent); transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
+        .vertical-card-icon { font-size: 2.5rem; margin-bottom: 16px; }
+        .vertical-card h3 { font-size: 1.25rem; font-weight: 600; margin-bottom: 8px; }
+        .vertical-card p { color: var(--text-muted); font-size: 0.9375rem; margin-bottom: 16px; }
+        .vertical-card-phone { display: flex; align-items: center; gap: 8px; font-weight: 600; color: var(--accent); font-size: 1rem; }
+        .vertical-card-phone svg { width: 18px; height: 18px; }
+
+        .cta-section { background: var(--primary); color: white; padding: 80px 24px; text-align: center; }
+        .cta-section h2 { font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 16px; }
+        .cta-section p { color: rgba(255,255,255,0.8); margin-bottom: 24px; }
+        .cta-section .btn { display: inline-flex; align-items: center; gap: 8px; background: white; color: var(--primary); padding: 14px 24px; border-radius: 8px; font-weight: 600; text-decoration: none; transition: all 0.2s; }
+        .cta-section .btn:hover { background: var(--bg-subtle); }
+
+        .footer { background: var(--bg-subtle); padding: 40px 24px; text-align: center; border-top: 1px solid var(--border); }
+        .footer p { color: var(--text-muted); font-size: 0.875rem; }
+        .footer a { color: var(--text); text-decoration: none; }
+        .footer a:hover { color: var(--accent); }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero { padding: 120px 24px 60px; }
+            .hero h1 { font-size: 2rem; }
+            .section { padding: 60px 24px; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">
+                <svg viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#0f172a"/><path d="M10 12L16 8L22 12V20L16 24L10 20V12Z" stroke="white" stroke-width="2" fill="none"/><circle cx="16" cy="16" r="3" fill="white"/></svg>
+                Martial Solutions
+            </a>
+            <div class="nav-links">
+                <a href="/" class="nav-link">Home</a>
+                <a href="/#services" class="nav-link">All Services</a>
+                <a href="/about" class="nav-link">About</a>
+                <a href="/#contact" class="nav-cta">Free Consultation</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <h1>Voice AI Agents by Industry</h1>
+        <p>Specialized AI agents trained on thousands of real calls in your vertical. Try a live demo — call any number below.</p>
+    </section>
+
+    <section class="section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Pick your industry</h2>
+                <p>Each demo is trained with industry-specific knowledge, pricing, and conversation flows.</p>
+            </div>
+
+            <div class="verticals-grid">
+                <a href="/plumbing" class="vertical-card">
+                    <div class="vertical-card-icon">🔧</div>
+                    <h3>Plumbing</h3>
+                    <p>24/7 emergency response, customer guidance through shutoffs, smart scheduling for routine and urgent calls.</p>
+                    <div class="vertical-card-phone">
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+                        (719) 738-8175
+                    </div>
+                </a>
+
+                <a href="/hvac" class="vertical-card">
+                    <div class="vertical-card-icon">❄️</div>
+                    <h3>HVAC</h3>
+                    <p>Emergency triage, seasonal surge handling, maintenance plan sales, and smart dispatching.</p>
+                    <div class="vertical-card-phone">
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+                        (719) 824-4206
+                    </div>
+                </a>
+
+                <a href="/roofing" class="vertical-card">
+                    <div class="vertical-card-icon">🏠</div>
+                    <h3>Roofing</h3>
+                    <p>Storm damage lead capture, insurance qualification, inspection booking, and estimate scheduling.</p>
+                    <div class="vertical-card-phone">
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+                        (719) 361-9042
+                    </div>
+                </a>
+
+                <a href="/solar" class="vertical-card">
+                    <div class="vertical-card-icon">☀️</div>
+                    <h3>Solar</h3>
+                    <p>Lead qualification, incentive education, objection handling, and consultation booking.</p>
+                    <div class="vertical-card-phone">
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+                        (719) 417-9461
+                    </div>
+                </a>
+
+                <a href="/salons" class="vertical-card">
+                    <div class="vertical-card-icon">💇</div>
+                    <h3>Salons & Barbershops</h3>
+                    <p>Appointment booking, stylist matching, service explanations, and schedule management.</p>
+                    <div class="vertical-card-phone">
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+                        (719) 800-7671
+                    </div>
+                </a>
+
+                <a href="/gyms" class="vertical-card">
+                    <div class="vertical-card-icon">💪</div>
+                    <h3>Gyms & Fitness</h3>
+                    <p>Membership inquiries, tour booking, class schedules, and new member conversion.</p>
+                    <div class="vertical-card-phone">
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+                        (719) 745-4242
+                    </div>
+                </a>
+
+                <a href="/bodywork" class="vertical-card">
+                    <div class="vertical-card-icon">🧘</div>
+                    <h3>Massage & Bodywork</h3>
+                    <p>Session booking, service explanations, intake pre-screening, and availability management.</p>
+                    <div class="vertical-card-phone">
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+                        (719) 417-5390
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <h2>Don't see your industry?</h2>
+        <p>We build custom voice agents for any business. Let's talk about yours.</p>
+        <a href="/#contact" class="btn">
+            <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+            Contact Us
+        </a>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2026 <a href="/">Martial Solutions</a>. Colorado's AI Partner for Growing Businesses.</p>
+    </footer>
+</body>
+</html>

@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Martial Solutions — AI Voice Agents for Service Businesses</title>
-    <meta name="description" content="Never miss another call. AI-powered voice agents that answer, qualify, and book — 24/7. Built for home service businesses.">
+    <title>Martial Solutions — Colorado's AI Partner for Growing Businesses</title>
+    <meta name="description" content="We help Front Range businesses work smarter with AI — from voice agents that answer your phones to marketing that runs itself. Your local AI partner in Colorado.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
@@ -14,6 +14,7 @@
             --secondary: #1e293b;
             --accent: #3b82f6;
             --accent-light: #60a5fa;
+            --accent-dark: #2563eb;
             --text: #0f172a;
             --text-muted: #64748b;
             --text-light: #94a3b8;
@@ -21,6 +22,7 @@
             --bg-subtle: #f8fafc;
             --border: #e2e8f0;
             --success: #10b981;
+            --colorado: #c8102e;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -65,9 +67,9 @@
             gap: 10px;
         }
 
-        .nav-logo svg {
-            width: 32px;
-            height: 32px;
+        .nav-logo img {
+            height: 36px;
+            width: auto;
         }
 
         .nav-links {
@@ -134,7 +136,7 @@
             border-radius: 12px;
             padding: 8px;
             box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            min-width: 220px;
+            min-width: 260px;
         }
 
         .nav-dropdown-item {
@@ -184,36 +186,58 @@
         .hero-container {
             max-width: 1200px;
             margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: center;
+            text-align: center;
         }
 
-        .hero-content h1 {
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(200, 16, 46, 0.1);
+            color: var(--colorado);
+            padding: 8px 16px;
+            border-radius: 100px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+
+        .hero-badge svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .hero h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
+            font-size: 3.75rem;
             font-weight: 700;
             line-height: 1.15;
             color: var(--primary);
             margin-bottom: 24px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .hero-content h1 span {
+        .hero h1 span {
             color: var(--accent);
         }
 
-        .hero-content p {
-            font-size: 1.25rem;
+        .hero p {
+            font-size: 1.375rem;
             color: var(--text-muted);
-            margin-bottom: 32px;
-            max-width: 500px;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .hero-buttons {
             display: flex;
             gap: 16px;
-            margin-bottom: 48px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 60px;
         }
 
         .btn-primary {
@@ -258,108 +282,29 @@
             transform: translateY(-2px);
         }
 
-        .hero-stats {
+        .hero-proof {
             display: flex;
-            gap: 40px;
+            justify-content: center;
+            gap: 48px;
+            flex-wrap: wrap;
         }
 
-        .stat {
-            text-align: left;
+        .hero-proof-item {
+            text-align: center;
         }
 
-        .stat-value {
+        .hero-proof-value {
             font-size: 2rem;
             font-weight: 700;
             color: var(--primary);
         }
 
-        .stat-label {
+        .hero-proof-label {
             font-size: 0.875rem;
             color: var(--text-muted);
         }
 
-        /* Demo Card */
-        .demo-card {
-            background: white;
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.08);
-        }
-
-        .demo-card h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-
-        .demo-card p {
-            color: var(--text-muted);
-            margin-bottom: 24px;
-        }
-
-        .form-group {
-            margin-bottom: 16px;
-        }
-
-        .form-group label {
-            display: block;
-            font-size: 0.875rem;
-            font-weight: 500;
-            color: var(--text);
-            margin-bottom: 6px;
-        }
-
-        .form-group input,
-        .form-group select {
-            width: 100%;
-            padding: 14px 16px;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            font-size: 1rem;
-            font-family: inherit;
-            transition: all 0.2s;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus {
-            outline: none;
-            border-color: var(--accent);
-            box-shadow: 0 0 0 3px rgba(59,130,246,0.1);
-        }
-
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-        }
-
-        .btn-submit {
-            width: 100%;
-            padding: 16px;
-            background: var(--accent);
-            color: white;
-            border: none;
-            border-radius: 10px;
-            font-weight: 600;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-
-        .btn-submit:hover {
-            background: var(--accent-light);
-            transform: translateY(-1px);
-        }
-
-        .demo-note {
-            text-align: center;
-            font-size: 0.8125rem;
-            color: var(--text-muted);
-            margin-top: 16px;
-        }
-
-        /* Problem Section */
+        /* Services Section */
         .section {
             padding: 100px 24px;
         }
@@ -404,125 +349,156 @@
             color: rgba(255,255,255,0.7);
         }
 
-        /* Problem Cards */
-        .problem-grid {
+        /* Services Grid */
+        .services-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 32px;
+            gap: 24px;
         }
 
-        .problem-card {
+        .service-card {
             background: white;
             border: 1px solid var(--border);
             border-radius: 16px;
             padding: 32px;
+            text-decoration: none;
+            color: var(--text);
+            transition: all 0.3s;
         }
 
-        .problem-card-icon {
-            width: 48px;
-            height: 48px;
+        .service-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+        }
+
+        .service-card-icon {
+            width: 56px;
+            height: 56px;
             background: var(--bg-subtle);
-            border-radius: 12px;
+            border-radius: 14px;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-bottom: 20px;
         }
 
-        .problem-card-icon svg {
-            width: 24px;
-            height: 24px;
+        .service-card-icon svg {
+            width: 28px;
+            height: 28px;
             color: var(--accent);
         }
 
-        .problem-card h3 {
+        .service-card h3 {
             font-size: 1.25rem;
             font-weight: 600;
             margin-bottom: 8px;
         }
 
-        .problem-card p {
+        .service-card p {
             color: var(--text-muted);
             font-size: 0.9375rem;
+            margin-bottom: 16px;
         }
 
-        /* Solutions Grid */
-        .solutions-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-        }
-
-        .solution-card {
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 16px;
-            padding: 32px;
-            text-decoration: none;
-            color: white;
-            transition: all 0.3s;
-        }
-
-        .solution-card:hover {
-            background: rgba(255,255,255,0.1);
-            border-color: rgba(255,255,255,0.2);
-            transform: translateY(-4px);
-        }
-
-        .solution-card-header {
-            display: flex;
+        .service-card-link {
+            font-size: 0.9375rem;
+            font-weight: 600;
+            color: var(--accent);
+            display: inline-flex;
             align-items: center;
+            gap: 4px;
+        }
+
+        .service-card-link svg {
+            width: 16px;
+            height: 16px;
+            transition: transform 0.2s;
+        }
+
+        .service-card:hover .service-card-link svg {
+            transform: translateX(4px);
+        }
+
+        /* Why Local Section */
+        .why-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .why-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 24px;
+            color: white;
+        }
+
+        .why-content p {
+            font-size: 1.125rem;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 32px;
+        }
+
+        .why-list {
+            list-style: none;
+        }
+
+        .why-list li {
+            display: flex;
+            align-items: flex-start;
             gap: 12px;
             margin-bottom: 16px;
+            font-size: 1rem;
+            color: rgba(255,255,255,0.9);
         }
 
-        .solution-card-icon {
-            width: 40px;
-            height: 40px;
+        .why-list li svg {
+            width: 24px;
+            height: 24px;
+            color: var(--success);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .why-image {
             background: rgba(255,255,255,0.1);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .solution-card-icon svg {
-            width: 20px;
-            height: 20px;
-            color: var(--accent-light);
-        }
-
-        .solution-card h3 {
-            font-size: 1.125rem;
-            font-weight: 600;
-        }
-
-        .solution-card p {
-            color: rgba(255,255,255,0.7);
-            font-size: 0.9375rem;
-            margin-bottom: 16px;
-        }
-
-        .solution-card-phone {
-            font-size: 0.875rem;
-            color: var(--accent-light);
-            font-weight: 500;
-        }
-
-        /* How It Works */
-        .steps-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 40px;
-        }
-
-        .step {
+            border-radius: 20px;
+            padding: 40px;
             text-align: center;
         }
 
-        .step-number {
-            width: 48px;
-            height: 48px;
+        .why-image-text {
+            font-size: 4rem;
+            margin-bottom: 16px;
+        }
+
+        .why-image h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .why-image p {
+            color: rgba(255,255,255,0.7);
+        }
+
+        /* Process Section */
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
+        }
+
+        .process-step {
+            text-align: center;
+        }
+
+        .process-number {
+            width: 56px;
+            height: 56px;
             background: var(--accent);
             color: white;
             border-radius: 50%;
@@ -534,13 +510,13 @@
             margin: 0 auto 20px;
         }
 
-        .step h3 {
+        .process-step h3 {
             font-size: 1.125rem;
             font-weight: 600;
             margin-bottom: 8px;
         }
 
-        .step p {
+        .process-step p {
             color: var(--text-muted);
             font-size: 0.9375rem;
         }
@@ -596,7 +572,7 @@
 
         /* CTA Section */
         .cta-section {
-            background: var(--primary);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
             color: white;
             padding: 100px 24px;
             text-align: center;
@@ -611,9 +587,9 @@
 
         .cta-section p {
             font-size: 1.125rem;
-            color: rgba(255,255,255,0.7);
+            color: rgba(255,255,255,0.8);
             margin-bottom: 32px;
-            max-width: 500px;
+            max-width: 600px;
             margin-left: auto;
             margin-right: auto;
         }
@@ -652,6 +628,20 @@
             color: var(--text-muted);
             font-size: 0.9375rem;
             max-width: 280px;
+            margin-bottom: 16px;
+        }
+
+        .footer-location {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+
+        .footer-location svg {
+            width: 16px;
+            height: 16px;
         }
 
         .footer-column h4 {
@@ -690,25 +680,25 @@
 
         /* Responsive */
         @media (max-width: 1024px) {
-            .hero-container { grid-template-columns: 1fr; gap: 40px; }
-            .hero-content h1 { font-size: 2.75rem; }
-            .problem-grid { grid-template-columns: 1fr; }
-            .solutions-grid { grid-template-columns: repeat(2, 1fr); }
-            .steps-grid { grid-template-columns: repeat(2, 1fr); }
+            .hero h1 { font-size: 2.75rem; }
+            .services-grid { grid-template-columns: repeat(2, 1fr); }
+            .why-grid { grid-template-columns: 1fr; gap: 40px; }
+            .process-grid { grid-template-columns: repeat(2, 1fr); }
             .footer-container { grid-template-columns: 1fr 1fr; }
         }
 
         @media (max-width: 768px) {
             .nav-links { display: none; }
             .hero { padding: 120px 24px 60px; }
-            .hero-content h1 { font-size: 2.25rem; }
-            .hero-buttons { flex-direction: column; }
-            .hero-stats { flex-direction: column; gap: 20px; }
+            .hero h1 { font-size: 2.25rem; }
+            .hero p { font-size: 1.125rem; }
+            .hero-buttons { flex-direction: column; align-items: center; }
+            .hero-proof { gap: 32px; }
             .section { padding: 60px 24px; }
             .section-header h2 { font-size: 2rem; }
-            .solutions-grid { grid-template-columns: 1fr; }
+            .services-grid { grid-template-columns: 1fr; }
+            .process-grid { grid-template-columns: 1fr; gap: 24px; }
             .testimonial-grid { grid-template-columns: 1fr; }
-            .steps-grid { grid-template-columns: 1fr; gap: 24px; }
             .footer-container { grid-template-columns: 1fr; gap: 40px; }
             .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
         }
@@ -719,7 +709,7 @@
     <nav class="nav">
         <div class="nav-container">
             <a href="/" class="nav-logo">
-                <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg viewBox="0 0 32 32" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect width="32" height="32" rx="8" fill="#0f172a"/>
                     <path d="M10 12L16 8L22 12V20L16 24L10 20V12Z" stroke="white" stroke-width="2" fill="none"/>
                     <circle cx="16" cy="16" r="3" fill="white"/>
@@ -729,48 +719,44 @@
             
             <div class="nav-links">
                 <div class="nav-dropdown">
-                    <a href="#solutions" class="nav-link nav-dropdown-trigger">
-                        Solutions
+                    <a href="#services" class="nav-link nav-dropdown-trigger">
+                        Services
                         <svg viewBox="0 0 20 20" fill="currentColor">
                             <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
                         </svg>
                     </a>
                     <div class="nav-dropdown-menu">
                         <div class="nav-dropdown-content">
-                            <a href="/roofing" class="nav-dropdown-item">
-                                Roofing
-                                <span>Storm damage, inspections, estimates</span>
+                            <a href="/services/voice-agents" class="nav-dropdown-item">
+                                Voice AI Agents
+                                <span>Never miss another call</span>
                             </a>
-                            <a href="/hvac" class="nav-dropdown-item">
-                                HVAC
-                                <span>Emergency calls, seasonal volume</span>
+                            <a href="/services/marketing-automation" class="nav-dropdown-item">
+                                AI Marketing Automation
+                                <span>Marketing that runs itself</span>
                             </a>
-                            <a href="/plumbing" class="nav-dropdown-item">
-                                Plumbing
-                                <span>24/7 emergencies, dispatching</span>
+                            <a href="/services/ai-audit" class="nav-dropdown-item">
+                                AI Business Audit
+                                <span>Find your AI opportunities</span>
                             </a>
-                            <a href="/solar" class="nav-dropdown-item">
-                                Solar
-                                <span>Lead qualification, consultations</span>
+                            <a href="/services/geo-optimization" class="nav-dropdown-item">
+                                GEO Optimization
+                                <span>Get found by AI search</span>
                             </a>
-                            <a href="/gyms" class="nav-dropdown-item">
-                                Gyms & Fitness
-                                <span>Tours, memberships, class bookings</span>
+                            <a href="/services/personal-assistant" class="nav-dropdown-item">
+                                AI Personal Assistant
+                                <span>Your own AI right hand</span>
                             </a>
-                            <a href="/salons" class="nav-dropdown-item">
-                                Salons
-                                <span>Appointments, stylist matching</span>
-                            </a>
-                            <a href="/bodywork" class="nav-dropdown-item">
-                                Massage & Bodywork
-                                <span>Session booking, availability</span>
+                            <a href="/services/custom-solutions" class="nav-dropdown-item">
+                                Custom Solutions
+                                <span>Built for your needs</span>
                             </a>
                         </div>
                     </div>
                 </div>
-                <a href="#how-it-works" class="nav-link">How It Works</a>
-                <a href="#pricing" class="nav-link">Pricing</a>
-                <a href="#contact" class="nav-cta">Get Demo</a>
+                <a href="/about" class="nav-link">About</a>
+                <a href="#process" class="nav-link">How We Work</a>
+                <a href="#contact" class="nav-cta">Free Consultation</a>
             </div>
         </div>
     </nav>
@@ -778,264 +764,243 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-container">
-            <div class="hero-content">
-                <h1>Never miss another <span>call</span>.</h1>
-                <p>AI voice agents that answer, qualify, and book appointments for your service business — 24 hours a day, 7 days a week.</p>
-                
-                <div class="hero-buttons">
-                    <a href="#demo" class="btn-primary">
-                        Get a Demo
-                        <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
-                        </svg>
-                    </a>
-                    <a href="tel:+17193619042" class="btn-secondary">
-                        <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor">
-                            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
-                        </svg>
-                        Try it Live
-                    </a>
-                </div>
-
-                <div class="hero-stats">
-                    <div class="stat">
-                        <div class="stat-value">24/7</div>
-                        <div class="stat-label">Always available</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-value">3 sec</div>
-                        <div class="stat-label">Answer time</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-value">78%</div>
-                        <div class="stat-label">First-call conversion</div>
-                    </div>
-                </div>
+            <div class="hero-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                    <circle cx="12" cy="10" r="3"/>
+                </svg>
+                Proudly Serving the Colorado Front Range
+            </div>
+            
+            <h1>AI that actually <span>works</span> for small business.</h1>
+            
+            <p>We help Front Range businesses work smarter with AI — from voice agents that answer your phones to marketing that runs itself. Your local AI partner.</p>
+            
+            <div class="hero-buttons">
+                <a href="#contact" class="btn-primary">
+                    Get a Free AI Audit
+                    <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                    </svg>
+                </a>
+                <a href="tel:+17193619042" class="btn-secondary">
+                    <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                    </svg>
+                    Talk to Us
+                </a>
             </div>
 
-            <div class="demo-card" id="demo">
-                <h3>Experience it in 30 seconds</h3>
-                <p>Enter your phone number. We'll call you right now.</p>
-                
-                <form id="demo-form">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>First Name</label>
-                            <input type="text" name="firstName" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Last Name</label>
-                            <input type="text" name="lastName" required>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label>Phone Number</label>
-                        <input type="tel" name="phone" placeholder="(555) 123-4567" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Business Website</label>
-                        <input type="url" name="website" placeholder="https://yourbusiness.com">
-                    </div>
-                    <div class="form-group">
-                        <label>Industry</label>
-                        <select name="industry" required>
-                            <option value="">Select your industry</option>
-                            <option value="roofing">Roofing</option>
-                            <option value="hvac">HVAC</option>
-                            <option value="plumbing">Plumbing</option>
-                            <option value="solar">Solar</option>
-                            <option value="gyms">Gyms & Fitness</option>
-                            <option value="salons">Salons & Barbershops</option>
-                            <option value="bodywork">Massage & Bodywork</option>
-                            <option value="other">Other</option>
-                        </select>
-                    </div>
-                    <button type="submit" class="btn-submit">Call Me Now</button>
-                </form>
-                <p class="demo-note">We'll call you in under 30 seconds</p>
+            <div class="hero-proof">
+                <div class="hero-proof-item">
+                    <div class="hero-proof-value">6+</div>
+                    <div class="hero-proof-label">Colorado businesses served</div>
+                </div>
+                <div class="hero-proof-item">
+                    <div class="hero-proof-value">48hr</div>
+                    <div class="hero-proof-label">Typical deployment time</div>
+                </div>
+                <div class="hero-proof-item">
+                    <div class="hero-proof-value">24/7</div>
+                    <div class="hero-proof-label">AI that never sleeps</div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Problem Section -->
-    <section class="section">
+    <!-- Services Section -->
+    <section class="section" id="services">
         <div class="section-container">
             <div class="section-header">
-                <h2>Every missed call is a lost job</h2>
-                <p>Service businesses lose thousands in revenue each month to calls that go unanswered.</p>
+                <h2>AI solutions that drive real results</h2>
+                <p>We don't sell AI hype. We build practical tools that save you time, capture more leads, and help you grow.</p>
             </div>
 
-            <div class="problem-grid">
-                <div class="problem-card">
-                    <div class="problem-card-icon">
+            <div class="services-grid">
+                <a href="/services/voice-agents" class="service-card">
+                    <div class="service-card-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-                            <line x1="1" y1="1" x2="23" y2="23"/>
                         </svg>
                     </div>
-                    <h3>You're on the job</h3>
-                    <p>You can't answer when you're on a roof, under a sink, or with a client. By the time you call back, they've already booked someone else.</p>
-                </div>
+                    <h3>Voice AI Agents</h3>
+                    <p>AI that answers your phones 24/7, qualifies leads, and books appointments. Never miss another call.</p>
+                    <div class="service-card-link">
+                        Learn more
+                        <svg viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                </a>
 
-                <div class="problem-card">
-                    <div class="problem-card-icon">
+                <a href="/services/marketing-automation" class="service-card">
+                    <div class="service-card-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="10"/>
-                            <polyline points="12 6 12 12 16 14"/>
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
                         </svg>
                     </div>
-                    <h3>After-hours calls</h3>
-                    <p>Emergencies don't wait for business hours. When your phone goes to voicemail at 9pm, that customer calls your competitor.</p>
-                </div>
+                    <h3>AI Marketing Automation</h3>
+                    <p>Automated follow-ups, lead nurturing, and campaigns that run while you sleep. Marketing on autopilot.</p>
+                    <div class="service-card-link">
+                        Learn more
+                        <svg viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                </a>
 
-                <div class="problem-card">
-                    <div class="problem-card-icon">
+                <a href="/services/ai-audit" class="service-card">
+                    <div class="service-card-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                            <circle cx="9" cy="7" r="4"/>
-                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                            <polyline points="14 2 14 8 20 8"/>
+                            <line x1="16" y1="13" x2="8" y2="13"/>
+                            <line x1="16" y1="17" x2="8" y2="17"/>
+                            <polyline points="10 9 9 9 8 9"/>
                         </svg>
                     </div>
-                    <h3>Not enough staff</h3>
-                    <p>Hiring a receptionist costs $35k+/year. Training takes months. And they still can't answer every call.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Solutions Section -->
-    <section class="section section-dark" id="solutions">
-        <div class="section-container">
-            <div class="section-header">
-                <h2>Built for your industry</h2>
-                <p>Specialized voice agents trained on thousands of real calls in your vertical.</p>
-            </div>
-
-            <div class="solutions-grid">
-                <a href="/roofing" class="solution-card">
-                    <div class="solution-card-header">
-                        <div class="solution-card-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-                                <polyline points="9 22 9 12 15 12 15 22"/>
-                            </svg>
-                        </div>
-                        <h3>Roofing</h3>
+                    <h3>AI Business Audit</h3>
+                    <p>We analyze your operations and identify where AI can save time, cut costs, and unlock growth. Free for qualified businesses.</p>
+                    <div class="service-card-link">
+                        Learn more
+                        <svg viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                        </svg>
                     </div>
-                    <p>Capture storm damage calls, book inspections, and never lose a lead.</p>
-                    <div class="solution-card-phone">Call demo: (719) 361-9042</div>
                 </a>
 
-                <a href="/hvac" class="solution-card">
-                    <div class="solution-card-header">
-                        <div class="solution-card-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"/>
-                            </svg>
-                        </div>
-                        <h3>HVAC</h3>
+                <a href="/services/geo-optimization" class="service-card">
+                    <div class="service-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"/>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                        </svg>
                     </div>
-                    <p>Handle emergencies and seasonal volume without missing a beat.</p>
-                    <div class="solution-card-phone">Call demo: (719) 824-4206</div>
+                    <h3>GEO Optimization</h3>
+                    <p>Get your business found when customers ask ChatGPT, Gemini, or Perplexity. The new SEO for the AI age.</p>
+                    <div class="service-card-link">
+                        Learn more
+                        <svg viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
                 </a>
 
-                <a href="/plumbing" class="solution-card">
-                    <div class="solution-card-header">
-                        <div class="solution-card-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                            </svg>
-                        </div>
-                        <h3>Plumbing</h3>
+                <a href="/services/personal-assistant" class="service-card">
+                    <div class="service-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                            <circle cx="12" cy="7" r="4"/>
+                        </svg>
                     </div>
-                    <p>Answer emergency calls instantly and guide customers through shutoffs.</p>
-                    <div class="solution-card-phone">Call demo: (719) 738-8175</div>
+                    <h3>AI Personal Assistant</h3>
+                    <p>Your own AI assistant that knows your business, manages tasks, and works across all your tools. Powered by Open Claw.</p>
+                    <div class="service-card-link">
+                        Learn more
+                        <svg viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
                 </a>
 
-                <a href="/solar" class="solution-card">
-                    <div class="solution-card-header">
-                        <div class="solution-card-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="12" cy="12" r="5"/>
-                                <line x1="12" y1="1" x2="12" y2="3"/>
-                                <line x1="12" y1="21" x2="12" y2="23"/>
-                                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
-                                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
-                                <line x1="1" y1="12" x2="3" y2="12"/>
-                                <line x1="21" y1="12" x2="23" y2="12"/>
-                                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
-                                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
-                            </svg>
-                        </div>
-                        <h3>Solar</h3>
+                <a href="/services/custom-solutions" class="service-card">
+                    <div class="service-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="16 18 22 12 16 6"/>
+                            <polyline points="8 6 2 12 8 18"/>
+                        </svg>
                     </div>
-                    <p>Qualify leads, explain incentives, and book consultations.</p>
-                    <div class="solution-card-phone">Call demo: (719) 417-9461</div>
-                </a>
-
-                <a href="/gyms" class="solution-card">
-                    <div class="solution-card-header">
-                        <div class="solution-card-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M18 8h1a4 4 0 0 1 0 8h-1"/>
-                                <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/>
-                                <line x1="6" y1="1" x2="6" y2="4"/>
-                                <line x1="10" y1="1" x2="10" y2="4"/>
-                                <line x1="14" y1="1" x2="14" y2="4"/>
-                            </svg>
-                        </div>
-                        <h3>Gyms & Fitness</h3>
+                    <h3>Custom AI Solutions</h3>
+                    <p>Need something specific? We build custom AI tools, integrations, and software tailored to your exact needs.</p>
+                    <div class="service-card-link">
+                        Learn more
+                        <svg viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                        </svg>
                     </div>
-                    <p>Book tours, answer membership questions, convert interest to sign-ups.</p>
-                    <div class="solution-card-phone">Call demo: (719) 745-4242</div>
-                </a>
-
-                <a href="/salons" class="solution-card">
-                    <div class="solution-card-header">
-                        <div class="solution-card-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="12" cy="8" r="7"/>
-                                <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/>
-                            </svg>
-                        </div>
-                        <h3>Salons</h3>
-                    </div>
-                    <p>Book appointments, match clients with stylists, keep chairs full.</p>
-                    <div class="solution-card-phone">Call demo: (719) 800-7671</div>
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- How It Works -->
-    <section class="section section-subtle" id="how-it-works">
+    <!-- Why Local Section -->
+    <section class="section section-dark">
+        <div class="section-container">
+            <div class="why-grid">
+                <div class="why-content">
+                    <h2>Why work with a local AI partner?</h2>
+                    <p>Most AI agencies are faceless operations on the coasts. We're your neighbors. We meet you at your shop, understand Front Range business culture, and stick around after deployment.</p>
+                    
+                    <ul class="why-list">
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                <polyline points="22 4 12 14.01 9 11.01"/>
+                            </svg>
+                            <span><strong>Face-to-face meetings</strong> — We come to you. Coffee's on us.</span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                <polyline points="22 4 12 14.01 9 11.01"/>
+                            </svg>
+                            <span><strong>We know your market</strong> — Colorado customers, Colorado competition.</span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                <polyline points="22 4 12 14.01 9 11.01"/>
+                            </svg>
+                            <span><strong>Ongoing support</strong> — We're not disappearing after launch.</span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                <polyline points="22 4 12 14.01 9 11.01"/>
+                            </svg>
+                            <span><strong>Real accountability</strong> — Our reputation is on the line in our own community.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="why-image">
+                    <div class="why-image-text">🏔️</div>
+                    <h3>Colorado Front Range</h3>
+                    <p>Denver • Colorado Springs • Boulder • Fort Collins</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="section section-subtle" id="process">
         <div class="section-container">
             <div class="section-header">
-                <h2>Live in 48 hours</h2>
-                <p>We handle everything. You just keep doing what you do.</p>
+                <h2>How we work</h2>
+                <p>From first conversation to working AI — typically in under a week.</p>
             </div>
 
-            <div class="steps-grid">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h3>Quick Discovery</h3>
-                    <p>15-minute call to understand your business, services, and how you want calls handled.</p>
+            <div class="process-grid">
+                <div class="process-step">
+                    <div class="process-number">1</div>
+                    <h3>Free Consultation</h3>
+                    <p>30 minutes to understand your business, challenges, and goals. We'll identify quick AI wins.</p>
                 </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <h3>We Build It</h3>
-                    <p>We train your AI agent on your business, pricing, and FAQs. Takes 24-48 hours.</p>
+                <div class="process-step">
+                    <div class="process-number">2</div>
+                    <h3>AI Audit & Roadmap</h3>
+                    <p>We map out exactly where AI can help, with clear ROI projections and timeline.</p>
                 </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <h3>Test Together</h3>
-                    <p>Call your agent, refine the responses, make sure it sounds like your best employee.</p>
+                <div class="process-step">
+                    <div class="process-number">3</div>
+                    <h3>Build & Test</h3>
+                    <p>We build your solution, test it thoroughly, and train it on your specific business.</p>
                 </div>
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <h3>Go Live</h3>
-                    <p>Forward your calls or get a new number. Every call answered, every lead captured.</p>
+                <div class="process-step">
+                    <div class="process-number">4</div>
+                    <h3>Launch & Support</h3>
+                    <p>Go live with confidence. We monitor, optimize, and support you ongoing.</p>
                 </div>
             </div>
         </div>
@@ -1045,8 +1010,8 @@
     <section class="section">
         <div class="section-container">
             <div class="section-header">
-                <h2>What our clients say</h2>
-                <p>Real results from real service businesses.</p>
+                <h2>What Colorado businesses are saying</h2>
+                <p>Real results from real Front Range businesses.</p>
             </div>
 
             <div class="testimonial-grid">
@@ -1076,14 +1041,14 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="cta-section">
-        <h2>Ready to never miss another call?</h2>
-        <p>Get a personalized demo for your business in 30 seconds.</p>
-        <a href="#demo" class="btn-primary">
-            Get Your Demo
+    <section class="cta-section" id="contact">
+        <h2>Ready to put AI to work for your business?</h2>
+        <p>Book a free 30-minute consultation. We'll show you exactly where AI can help — no pressure, no jargon, just straight talk.</p>
+        <a href="tel:+17193619042" class="btn-primary">
             <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
             </svg>
+            Call (719) 361-9042
         </a>
     </section>
 
@@ -1092,40 +1057,46 @@
         <div class="footer-container">
             <div class="footer-brand">
                 <h3>Martial Solutions</h3>
-                <p>AI voice agents for service businesses. Answer every call, book every job, grow without limits.</p>
+                <p>Colorado's AI partner for growing businesses. We help Front Range companies work smarter with AI.</p>
+                <div class="footer-location">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                        <circle cx="12" cy="10" r="3"/>
+                    </svg>
+                    Colorado Springs, CO
+                </div>
             </div>
             
             <div class="footer-column">
-                <h4>Solutions</h4>
-                <a href="/roofing">Roofing</a>
-                <a href="/hvac">HVAC</a>
-                <a href="/plumbing">Plumbing</a>
-                <a href="/solar">Solar</a>
+                <h4>Services</h4>
+                <a href="/services/voice-agents">Voice AI Agents</a>
+                <a href="/services/marketing-automation">Marketing Automation</a>
+                <a href="/services/ai-audit">AI Business Audit</a>
+                <a href="/services/geo-optimization">GEO Optimization</a>
             </div>
             
             <div class="footer-column">
-                <h4>More Industries</h4>
-                <a href="/gyms">Gyms & Fitness</a>
-                <a href="/salons">Salons</a>
-                <a href="/bodywork">Massage & Bodywork</a>
+                <h4>More Services</h4>
+                <a href="/services/personal-assistant">AI Personal Assistant</a>
+                <a href="/services/custom-solutions">Custom Solutions</a>
+                <a href="/voice-agents">Voice Agent Demos</a>
             </div>
             
             <div class="footer-column">
                 <h4>Company</h4>
-                <a href="#how-it-works">How It Works</a>
-                <a href="#pricing">Pricing</a>
+                <a href="/about">About Us</a>
+                <a href="#process">How We Work</a>
                 <a href="#contact">Contact</a>
             </div>
         </div>
         
         <div class="footer-bottom">
             <p>&copy; 2026 Martial Solutions. All rights reserved.</p>
-            <p>Colorado Springs, CO</p>
+            <p>Proudly serving the Colorado Front Range</p>
         </div>
     </footer>
 
     <script>
-        // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -1134,13 +1105,6 @@
                     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             });
-        });
-
-        // Form handling (placeholder)
-        document.getElementById('demo-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            // Add your form submission logic here
-            alert('Demo request submitted! We\'ll call you in under 30 seconds.');
         });
     </script>
 </body>
