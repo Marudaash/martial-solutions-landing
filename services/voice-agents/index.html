@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Voice Agents | Martial Solutions</title>
+    <meta name="description" content="AI voice agents that answer your phones 24/7, qualify leads, and book appointments. Never miss another call.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary: #0f172a; --secondary: #1e293b; --accent: #2563eb; --accent-light: #3b82f6; --text: #0f172a; --text-muted: #64748b; --bg: #ffffff; --bg-subtle: #f8fafc; --border: #e2e8f0; --success: #10b981; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, sans-serif; color: var(--text); background: var(--bg); line-height: 1.6; }
+        .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); }
+        .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 72px; }
+        .nav-logo { font-weight: 700; font-size: 1.25rem; color: var(--primary); text-decoration: none; display: flex; align-items: center; gap: 10px; }
+        .nav-logo img { height: 36px; width: auto; }
+        .nav-links { display: flex; align-items: center; gap: 8px; }
+        .nav-link { color: var(--text-muted); text-decoration: none; font-size: 0.9375rem; font-weight: 500; padding: 8px 16px; border-radius: 6px; transition: all 0.2s; }
+        .nav-link:hover { color: var(--text); background: var(--bg-subtle); }
+        .nav-cta { background: var(--primary); color: white; padding: 10px 20px; border-radius: 8px; font-weight: 600; text-decoration: none; }
+
+        .hero { padding: 160px 24px 100px; background: linear-gradient(180deg, var(--bg-subtle) 0%, var(--bg) 100%); }
+        .hero-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+        .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(37, 99, 235, 0.1); color: var(--accent); padding: 8px 16px; border-radius: 100px; font-size: 0.875rem; font-weight: 600; margin-bottom: 20px; }
+        .hero-content h1 { font-family: 'Playfair Display', serif; font-size: 3.25rem; font-weight: 700; line-height: 1.15; margin-bottom: 24px; }
+        .hero-content h1 span { color: var(--accent); }
+        .hero-content p { font-size: 1.25rem; color: var(--text-muted); margin-bottom: 32px; max-width: 500px; }
+        .hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; }
+        .btn-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--accent); color: white; padding: 16px 28px; border-radius: 10px; font-weight: 600; text-decoration: none; transition: all 0.2s; }
+        .btn-primary:hover { background: var(--accent-light); transform: translateY(-2px); }
+        .btn-secondary { display: inline-flex; align-items: center; gap: 8px; background: white; color: var(--text); padding: 16px 28px; border-radius: 10px; font-weight: 600; text-decoration: none; border: 1px solid var(--border); }
+
+        .demo-card { background: white; border: 1px solid var(--border); border-radius: 20px; padding: 40px; box-shadow: 0 20px 60px rgba(0,0,0,0.08); }
+        .demo-card h3 { font-size: 1.5rem; font-weight: 700; margin-bottom: 8px; }
+        .demo-card > p { color: var(--text-muted); margin-bottom: 24px; }
+
+        .verticals-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 32px; }
+        .vertical-item { background: var(--bg-subtle); border: 1px solid var(--border); border-radius: 12px; padding: 20px; text-decoration: none; color: var(--text); transition: all 0.2s; }
+        .vertical-item:hover { border-color: var(--accent); transform: translateY(-2px); }
+        .vertical-item h4 { font-weight: 600; margin-bottom: 4px; }
+        .vertical-item p { font-size: 0.875rem; color: var(--text-muted); margin-bottom: 8px; }
+        .vertical-item .phone { font-size: 0.875rem; color: var(--accent); font-weight: 500; }
+
+        .section { padding: 100px 24px; }
+        .section-dark { background: var(--primary); color: white; }
+        .section-subtle { background: var(--bg-subtle); }
+        .section-container { max-width: 1200px; margin: 0 auto; }
+        .section-header { text-align: center; max-width: 700px; margin: 0 auto 60px; }
+        .section-header h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 700; margin-bottom: 16px; }
+        .section-dark .section-header h2 { color: white; }
+        .section-header p { font-size: 1.125rem; color: var(--text-muted); }
+        .section-dark .section-header p { color: rgba(255,255,255,0.7); }
+
+        .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+        .feature-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 32px; }
+        .feature-card-icon { width: 48px; height: 48px; background: var(--accent); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+        .feature-card-icon svg { width: 24px; height: 24px; color: white; }
+        .feature-card h3 { font-size: 1.125rem; font-weight: 600; margin-bottom: 8px; }
+        .feature-card p { color: rgba(255,255,255,0.7); font-size: 0.9375rem; }
+
+        .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+        .pricing-card { background: white; border: 1px solid var(--border); border-radius: 16px; padding: 32px; text-align: center; }
+        .pricing-card.featured { border-color: var(--accent); box-shadow: 0 10px 40px rgba(37, 99, 235, 0.15); }
+        .pricing-card h3 { font-size: 1.25rem; font-weight: 600; margin-bottom: 8px; }
+        .pricing-card .price { font-size: 2.5rem; font-weight: 700; margin: 16px 0; }
+        .pricing-card .price span { font-size: 1rem; color: var(--text-muted); font-weight: 400; }
+        .pricing-card ul { list-style: none; text-align: left; margin: 24px 0; }
+        .pricing-card li { padding: 8px 0; color: var(--text-muted); font-size: 0.9375rem; display: flex; align-items: center; gap: 8px; }
+        .pricing-card li svg { color: var(--success); flex-shrink: 0; }
+
+        .cta-section { background: var(--accent); color: white; padding: 80px 24px; text-align: center; }
+        .cta-section h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 16px; }
+        .cta-section p { font-size: 1.125rem; color: rgba(255,255,255,0.9); margin-bottom: 32px; }
+        .cta-section .btn-primary { background: white; color: var(--accent); }
+
+        .footer { background: var(--primary); color: white; padding: 60px 24px 40px; }
+        .footer-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .footer-logo { font-weight: 700; font-size: 1.25rem; }
+        .footer-links { display: flex; gap: 32px; }
+        .footer-links a { color: rgba(255,255,255,0.7); text-decoration: none; }
+        .footer-copyright { color: rgba(255,255,255,0.5); font-size: 0.875rem; }
+
+        @media (max-width: 1024px) { .hero-container { grid-template-columns: 1fr; } .features-grid, .pricing-grid { grid-template-columns: repeat(2, 1fr); } .verticals-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 768px) { .nav-links { display: none; } .hero { padding: 120px 24px 60px; } .hero-content h1 { font-size: 2.25rem; } .features-grid, .pricing-grid, .verticals-grid { grid-template-columns: 1fr; } .footer-container { flex-direction: column; gap: 24px; text-align: center; } }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">
+                <img src="/assets/logo.png" alt="Martial Solutions" style="height: 40px; width: auto;">
+                Martial Solutions
+            </a>
+            <div class="nav-links">
+                <a href="/" class="nav-link">Home</a>
+                <a href="/services" class="nav-link">Services</a>
+                <a href="/voice-agents" class="nav-link">Industries</a>
+                <a href="/about" class="nav-link">About</a>
+                <a href="/#pricing" class="nav-link">Pricing</a>
+                <a href="tel:+17196313986" class="nav-cta">Talk to Our AI</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72"/></svg>
+                    AI Voice Agents
+                </div>
+                <h1>Never miss another <span>phone call</span></h1>
+                <p>AI voice agents that answer 24/7, qualify leads, book appointments, and sound just like your best employee. Custom-trained for your business.</p>
+                <div class="hero-buttons">
+                    <a href="tel:+17196313986" class="btn-primary">Call The Architect: (719) 631-3986</a>
+                </div>
+            </div>
+
+            <div class="demo-card">
+                <h3>Try a live demo</h3>
+                <p>Call one of our industry-specific demo agents and experience it yourself.</p>
+                <div class="verticals-grid">
+                    <a href="/plumbing" class="vertical-item">
+                        <h4>Plumbing</h4>
+                        <p>Emergency response & scheduling</p>
+                        <span class="phone">(719) 738-8175</span>
+                    </a>
+                    <a href="/hvac" class="vertical-item">
+                        <h4>HVAC</h4>
+                        <p>Triage & maintenance plans</p>
+                        <span class="phone">(719) 824-4206</span>
+                    </a>
+                    <a href="/roofing" class="vertical-item">
+                        <h4>Roofing</h4>
+                        <p>Storm damage & inspections</p>
+                        <span class="phone">(719) 414-2580</span>
+                    </a>
+                    <a href="/solar" class="vertical-item">
+                        <h4>Solar</h4>
+                        <p>Lead qualification & booking</p>
+                        <span class="phone">(719) 417-9461</span>
+                    </a>
+                    <a href="/salons" class="vertical-item">
+                        <h4>Salons</h4>
+                        <p>Appointments & stylist matching</p>
+                        <span class="phone">(719) 800-7671</span>
+                    </a>
+                    <a href="/gyms" class="vertical-item">
+                        <h4>Gyms</h4>
+                        <p>Memberships & tour booking</p>
+                        <span class="phone">(719) 745-4242</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-dark">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>What your AI agent does</h2>
+                <p>Trained on thousands of real calls. Ready to represent your business in 48 hours.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+                    <h3>24/7 availability</h3>
+                    <p>Answers every call in 3 rings, day or night. Weekends, holidays, 3am emergencies — covered.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+                    <h3>Lead qualification</h3>
+                    <p>Asks the right questions, captures details, and qualifies leads before they hit your inbox.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+                    <h3>Appointment booking</h3>
+                    <p>Books directly into your calendar — Google, Outlook, Calendly, or your industry software.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+                    <h3>Natural conversation</h3>
+                    <p>No robotic menus. Real conversation flow that makes customers feel heard and helped.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+                    <h3>Instant notifications</h3>
+                    <p>Get a text and email after every call with full details and call recording.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+                    <h3>Your voice, your rules</h3>
+                    <p>Trained on your business. Uses your terminology, follows your processes, represents your brand.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-container">
+            <div style="text-align:center; margin-bottom: 40px; padding: 24px; background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%); border-radius: 16px; color: white;">
+                <h3 style="font-size: 1.5rem; margin-bottom: 8px;">Want YOUR agent in 10 minutes?</h3>
+                <p style="color: rgba(255,255,255,0.8); margin-bottom: 16px;">Call The Architect — our AI builds your custom agent while you're on the phone.</p>
+                <a href="tel:+17196313986" style="display: inline-flex; align-items: center; gap: 8px; background: white; color: #0f172a; padding: 14px 28px; border-radius: 10px; font-weight: 600; text-decoration: none;">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+                    Call (719) 631-3986
+                </a>
+            </div>
+            <div class="section-header">
+                <h2>Simple, transparent pricing</h2>
+                <p>Free prototype first. $500 setup after you approve. No hidden fees.</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Starter</h3>
+                    <div class="price">$100<span>/month</span></div>
+                    <ul>
+                        <li><svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg> Up to 100 calls/month</li>
+                        <li><svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg> 24/7 answering</li>
+                        <li><svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg> SMS & email notifications</li>
+                        <li><svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg> Call recordings</li>
+                        <li><svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg> $0.15/min overage</li>
+                    </ul>
+                    <p style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 16px;">+ $500 one-time setup</p>
+                    <button onclick="checkout('starter')" class="btn-secondary" style="width:100%;justify-content:center;cursor:pointer;border:1px solid var(--primary);background:white;color:var(--primary);padding:14px 28px;border-radius:10px;font-weight:600;font-size:1rem;">Subscribe Now</button>
+                    <a href="tel:+17196313986" style="display:block;text-align:center;margin-top:12px;color:var(--text-muted);font-size:0.875rem;">Or call for free trial first</a>
+                </div>
+                <div class="pricing-card featured">
+                    <h3>Growth</h3>
+                    <div class="price">$250<span>/month</span></div>
+                    <ul>
+                        <li><svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg> Up to 500 calls/month</li>
+                        <li><svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg> Calendar integration</li>
+                        <li><svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg> CRM integration</li>
+                        <li><svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg> Custom training</li>
+                        <li><svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg> $0.15/min overage</li>
+                    </ul>
+                    <p style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 16px;">+ $500 one-time setup</p>
+                    <button onclick="checkout('growth')" class="btn-primary" style="width:100%;justify-content:center;cursor:pointer;border:none;background:var(--accent);color:white;padding:14px 28px;border-radius:10px;font-weight:600;font-size:1rem;">Subscribe Now</button>
+                    <a href="tel:+17196313986" style="display:block;text-align:center;margin-top:12px;color:rgba(255,255,255,0.7);font-size:0.875rem;">Or call for free trial first</a>
+                </div>
+                <div class="pricing-card">
+                    <h3>Enterprise</h3>
+                    <div class="price">Custom</div>
+                    <ul>
+                        <li><svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg> Unlimited calls</li>
+                        <li><svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg> Multiple phone lines</li>
+                        <li><svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg> Custom integrations</li>
+                        <li><svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg> Dedicated support</li>
+                        <li><svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg> SLA guarantees</li>
+                    </ul>
+                    <p style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 16px;">Custom setup & pricing</p>
+                    <a href="tel:+17196313986" class="btn-secondary" style="width:100%;justify-content:center;">Call to Discuss</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <h2>Ready to never miss a call?</h2>
+        <p>Try a live demo now, or schedule a free consultation.</p>
+        <a href="/#contact" class="btn-primary">Get Your Free Demo</a>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">Martial Solutions</div>
+            <div class="footer-links">
+                <a href="/">Home</a>
+                <a href="/voice-agents">Industries</a>
+                <a href="/about">About</a>
+                <a href="/#contact">Contact</a>
+            </div>
+            <div class="footer-copyright">&copy; 2026 Martial Solutions</div>
+        </div>
+    </footer>
+<script>
+    async function checkout(plan) {
+        const btn = event.target;
+        btn.disabled = true;
+        btn.textContent = 'Loading...';
+        
+        try {
+            const res = await fetch('/api/checkout', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ plan })
+            });
+            
+            const data = await res.json();
+            
+            if (data.url) {
+                window.location.href = data.url;
+            } else {
+                alert('Something went wrong. Please call us at (719) 631-3986.');
+                btn.disabled = false;
+                btn.textContent = 'Subscribe Now';
+            }
+        } catch (err) {
+            alert('Something went wrong. Please call us at (719) 631-3986.');
+            btn.disabled = false;
+            btn.textContent = 'Subscribe Now';
+        }
+    }
+    </script>
+</body>
+</html>

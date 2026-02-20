@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Marketing Automation | Martial Solutions</title>
+    <meta name="description" content="Automated follow-ups, lead nurturing, and campaigns that run while you sleep. Marketing on autopilot.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary: #0f172a; --secondary: #1e293b; --accent: #8b5cf6; --accent-light: #a78bfa; --text: #0f172a; --text-muted: #64748b; --bg: #ffffff; --bg-subtle: #f8fafc; --border: #e2e8f0; --success: #10b981; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, sans-serif; color: var(--text); background: var(--bg); line-height: 1.6; }
+        .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); }
+        .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 72px; }
+        .nav-logo { font-weight: 700; font-size: 1.25rem; color: var(--primary); text-decoration: none; display: flex; align-items: center; gap: 10px; }
+        .nav-logo img { height: 36px; width: auto; }
+        .nav-links { display: flex; align-items: center; gap: 8px; }
+        .nav-link { color: var(--text-muted); text-decoration: none; font-size: 0.9375rem; font-weight: 500; padding: 8px 16px; border-radius: 6px; transition: all 0.2s; }
+        .nav-link:hover { color: var(--text); background: var(--bg-subtle); }
+        .nav-cta { background: var(--primary); color: white; padding: 10px 20px; border-radius: 8px; font-weight: 600; text-decoration: none; }
+
+        .hero { padding: 160px 24px 100px; background: linear-gradient(180deg, var(--bg-subtle) 0%, var(--bg) 100%); }
+        .hero-container { max-width: 900px; margin: 0 auto; text-align: center; }
+        .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(139, 92, 246, 0.1); color: var(--accent); padding: 8px 16px; border-radius: 100px; font-size: 0.875rem; font-weight: 600; margin-bottom: 20px; }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: 3.25rem; font-weight: 700; line-height: 1.15; margin-bottom: 24px; }
+        .hero h1 span { color: var(--accent); }
+        .hero p { font-size: 1.25rem; color: var(--text-muted); margin-bottom: 32px; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .hero-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+        .btn-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--accent); color: white; padding: 16px 28px; border-radius: 10px; font-weight: 600; text-decoration: none; transition: all 0.2s; }
+        .btn-primary:hover { background: var(--accent-light); transform: translateY(-2px); }
+        .btn-secondary { display: inline-flex; align-items: center; gap: 8px; background: white; color: var(--text); padding: 16px 28px; border-radius: 10px; font-weight: 600; text-decoration: none; border: 1px solid var(--border); }
+
+        .section { padding: 100px 24px; }
+        .section-dark { background: var(--primary); color: white; }
+        .section-subtle { background: var(--bg-subtle); }
+        .section-container { max-width: 1200px; margin: 0 auto; }
+        .section-header { text-align: center; max-width: 700px; margin: 0 auto 60px; }
+        .section-header h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 700; margin-bottom: 16px; }
+        .section-dark .section-header h2 { color: white; }
+        .section-header p { font-size: 1.125rem; color: var(--text-muted); }
+        .section-dark .section-header p { color: rgba(255,255,255,0.7); }
+
+        .pain-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; }
+        .pain-card { background: white; border: 1px solid var(--border); border-radius: 16px; padding: 32px; }
+        .pain-card-header { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 16px; }
+        .pain-card-icon { width: 48px; height: 48px; min-width: 48px; background: rgba(239, 68, 68, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; }
+        .pain-card-icon svg { width: 24px; height: 24px; color: #ef4444; }
+        .pain-card h3 { font-size: 1.25rem; font-weight: 600; padding-top: 4px; }
+        .pain-card p { color: var(--text-muted); font-size: 0.9375rem; }
+
+        .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+        .feature-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 32px; }
+        .feature-card-icon { width: 48px; height: 48px; background: var(--accent); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+        .feature-card-icon svg { width: 24px; height: 24px; color: white; }
+        .feature-card h3 { font-size: 1.125rem; font-weight: 600; margin-bottom: 8px; }
+        .feature-card p { color: rgba(255,255,255,0.7); font-size: 0.9375rem; }
+
+        .cta-section { background: var(--accent); color: white; padding: 80px 24px; text-align: center; }
+        .cta-section h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 16px; }
+        .cta-section p { font-size: 1.125rem; color: rgba(255,255,255,0.9); margin-bottom: 32px; }
+        .cta-section .btn-primary { background: white; color: var(--accent); }
+
+        .footer { background: var(--primary); color: white; padding: 60px 24px 40px; }
+        .footer-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .footer-logo { font-weight: 700; font-size: 1.25rem; }
+        .footer-links { display: flex; gap: 32px; }
+        .footer-links a { color: rgba(255,255,255,0.7); text-decoration: none; }
+        .footer-copyright { color: rgba(255,255,255,0.5); font-size: 0.875rem; }
+
+        @media (max-width: 1024px) { .features-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 768px) { .nav-links { display: none; } .hero { padding: 120px 24px 60px; } .hero h1 { font-size: 2.25rem; } .pain-grid, .features-grid { grid-template-columns: 1fr; } .footer-container { flex-direction: column; gap: 24px; text-align: center; } }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">
+                <img src="/assets/logo.png" alt="Martial Solutions" style="height: 40px; width: auto;">
+                Martial Solutions
+            </a>
+            <div class="nav-links">
+                <a href="/" class="nav-link">Home</a>
+                <a href="/services" class="nav-link">Services</a>
+                <a href="/voice-agents" class="nav-link">Industries</a>
+                <a href="/about" class="nav-link">About</a>
+                <a href="/#pricing" class="nav-link">Pricing</a>
+                <a href="tel:+17196313986" class="nav-cta">Talk to Our AI</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-badge">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                AI Marketing Automation
+            </div>
+            <h1>Marketing that runs <span>while you sleep</span></h1>
+            <p>Automated follow-ups, lead nurturing, and campaigns that convert — without hiring a marketing team or learning complex software.</p>
+            <div class="hero-buttons">
+                <a href="tel:+17196313986" class="btn-primary">Call The Architect: (719) 631-3986</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Sound familiar?</h2>
+                <p>Marketing falls through the cracks when you're running a business.</p>
+            </div>
+            <div class="pain-grid">
+                <div class="pain-card">
+                    <div class="pain-card-header">
+                        <div class="pain-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+                        <h3>Leads go cold because you forgot to follow up</h3>
+                    </div>
+                    <p>Someone filled out your contact form last week. You meant to call them. Life happened. They went with your competitor who responded in 5 minutes.</p>
+                </div>
+                <div class="pain-card">
+                    <div class="pain-card-header">
+                        <div class="pain-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+                        <h3>"I should send a newsletter" (for 2 years)</h3>
+                    </div>
+                    <p>You know staying in touch with past customers matters. You've been meaning to start email marketing. Just never found the time.</p>
+                </div>
+                <div class="pain-card">
+                    <div class="pain-card-header">
+                        <div class="pain-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4"/></svg></div>
+                        <h3>Reviews don't happen unless you ask</h3>
+                    </div>
+                    <p>Happy customers would leave reviews. They just forget. You forget to ask. Your competitor has 200 reviews. You have 12.</p>
+                </div>
+                <div class="pain-card">
+                    <div class="pain-card-header">
+                        <div class="pain-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></div>
+                        <h3>Paying for software you don't use</h3>
+                    </div>
+                    <p>HubSpot, Mailchimp, Constant Contact — you signed up, never set them up. Or set them up and never used them. Still paying.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-dark">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>What AI automation handles</h2>
+                <p>Set it once. It runs forever. We handle the setup.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+                    <h3>Instant lead response</h3>
+                    <p>New lead comes in? Automatic text and email within 60 seconds. Phone call scheduled. No leads slip away.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg></div>
+                    <h3>Lead nurturing sequences</h3>
+                    <p>Not ready to buy today? Automated follow-ups over weeks keep you top of mind until they are.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+                    <h3>Review requests</h3>
+                    <p>After every job, automatic text asking for a Google review. Right time, right ask, more reviews.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+                    <h3>Appointment reminders</h3>
+                    <p>Text and email reminders before appointments. Reduce no-shows by 60%. Automatic.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+                    <h3>Monthly newsletters</h3>
+                    <p>AI-written, on-brand emails to your customer list. Tips, promotions, staying in touch — automatic.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+                    <h3>Re-engagement campaigns</h3>
+                    <p>Haven't heard from a customer in 6 months? Automatic "we miss you" message brings them back.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <h2>Ready for marketing that actually happens?</h2>
+        <p>Free audit of your current marketing. We'll show you exactly what to automate.</p>
+        <a href="/#contact" class="btn-primary">Get Your Free Audit</a>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">Martial Solutions</div>
+            <div class="footer-links">
+                <a href="/">Home</a>
+                <a href="/voice-agents">Industries</a>
+                <a href="/about">About</a>
+                <a href="/#contact">Contact</a>
+            </div>
+            <div class="footer-copyright">&copy; 2026 Martial Solutions</div>
+        </div>
+    </footer>
+</body>
+</html>
