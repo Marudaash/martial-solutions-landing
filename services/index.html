@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | Martial Solutions</title>
+    <meta name="description" content="AI solutions for Colorado businesses. Voice agents, marketing automation, business audits, and custom solutions.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary: #0f172a; --secondary: #1e293b; --accent: #2563eb; --text: #0f172a; --text-muted: #64748b; --bg: #ffffff; --bg-subtle: #f8fafc; --border: #e2e8f0; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, sans-serif; color: var(--text); background: var(--bg); line-height: 1.6; }
+        .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); }
+        .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 72px; }
+        .nav-logo { font-weight: 700; font-size: 1.25rem; color: var(--primary); text-decoration: none; display: flex; align-items: center; gap: 10px; }
+        .nav-logo img { height: 36px; width: auto; }
+        .nav-links { display: flex; align-items: center; gap: 8px; }
+        .nav-link { color: var(--text-muted); text-decoration: none; font-size: 0.9375rem; font-weight: 500; padding: 8px 16px; border-radius: 6px; }
+        .nav-cta { background: var(--primary); color: white; padding: 10px 20px; border-radius: 8px; font-weight: 600; text-decoration: none; }
+
+        .hero { padding: 160px 24px 80px; background: linear-gradient(180deg, var(--bg-subtle) 0%, var(--bg) 100%); text-align: center; }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: 3rem; font-weight: 700; margin-bottom: 16px; }
+        .hero p { font-size: 1.25rem; color: var(--text-muted); max-width: 600px; margin: 0 auto; }
+
+        .services { padding: 60px 24px 100px; }
+        .services-container { max-width: 1200px; margin: 0 auto; }
+        .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+        .service-card { background: white; border: 1px solid var(--border); border-radius: 16px; padding: 32px; text-decoration: none; color: var(--text); transition: all 0.2s; }
+        .service-card:hover { border-color: var(--accent); transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.1); }
+        .service-icon { width: 48px; height: 48px; background: var(--bg-subtle); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+        .service-icon svg { width: 24px; height: 24px; color: var(--accent); }
+        .service-card h3 { font-size: 1.25rem; font-weight: 600; margin-bottom: 8px; }
+        .service-card p { color: var(--text-muted); font-size: 0.9375rem; margin-bottom: 16px; }
+        .service-link { color: var(--accent); font-weight: 500; font-size: 0.9375rem; display: flex; align-items: center; gap: 4px; }
+        .service-link svg { width: 16px; height: 16px; }
+
+        .footer { background: var(--primary); color: white; padding: 60px 24px 40px; }
+        .footer-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .footer-logo { font-weight: 700; font-size: 1.25rem; }
+        .footer-links { display: flex; gap: 32px; }
+        .footer-links a { color: rgba(255,255,255,0.7); text-decoration: none; }
+        .footer-copyright { color: rgba(255,255,255,0.5); font-size: 0.875rem; }
+
+        @media (max-width: 1024px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 768px) { .nav-links { display: none; } .hero { padding: 120px 24px 60px; } .hero h1 { font-size: 2.25rem; } .services-grid { grid-template-columns: 1fr; } .footer-container { flex-direction: column; gap: 24px; text-align: center; } }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">
+                <img src="/assets/logo.png" alt="Martial Solutions" style="height: 40px; width: auto;">
+                Martial Solutions
+            </a>
+            <div class="nav-links">
+                <a href="/" class="nav-link">Home</a>
+                <a href="/services" class="nav-link">Services</a>
+                <a href="/voice-agents" class="nav-link">Industries</a>
+                <a href="/about" class="nav-link">About</a>
+                <a href="/#pricing" class="nav-link">Pricing</a>
+                <a href="tel:+17196313986" class="nav-cta">Talk to Our AI</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <h1>Our Services</h1>
+        <p>AI solutions tailored for Colorado small businesses. From voice agents to custom software, we build what you need.</p>
+    </section>
+
+    <section class="services">
+        <div class="services-container">
+            <div class="services-grid">
+                <a href="/services/voice-agents" class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72"/></svg>
+                    </div>
+                    <h3>Voice AI Agents</h3>
+                    <p>AI that answers your phones 24/7, qualifies leads, and books appointments. Never miss another call.</p>
+                    <span class="service-link">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                </a>
+
+                <a href="/services/marketing-automation" class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    </div>
+                    <h3>Marketing Automation</h3>
+                    <p>Automated follow-ups, lead nurturing, and campaigns that run while you sleep. Marketing on autopilot.</p>
+                    <span class="service-link">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                </a>
+
+                <a href="/services/ai-audit" class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                    </div>
+                    <h3>AI Business Audit</h3>
+                    <p>We analyze your operations and identify where AI can save time, cut costs, and unlock growth. Free for qualified businesses.</p>
+                    <span class="service-link">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                </a>
+
+                <a href="/services/geo-optimization" class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                    </div>
+                    <h3>GEO Optimization</h3>
+                    <p>Get your business found when customers ask ChatGPT, Gemini, or Perplexity. The new SEO for the AI age.</p>
+                    <span class="service-link">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                </a>
+
+                <a href="/services/personal-assistant" class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    </div>
+                    <h3>AI Personal Assistant</h3>
+                    <p>Your own AI assistant that knows your business, manages tasks, and works across all your tools.</p>
+                    <span class="service-link">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                </a>
+
+                <a href="/services/custom-solutions" class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4"/></svg>
+                    </div>
+                    <h3>Custom AI Solutions</h3>
+                    <p>Need something specific? We build custom AI tools, integrations, and software tailored to your exact needs.</p>
+                    <span class="service-link">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                </a>
+
+                <a href="tel:+17196313986" class="service-card" style="background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%); color: white; border: none;">
+                    <div class="service-icon" style="background: rgba(255,255,255,0.15);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    </div>
+                    <h3 style="color: white;">AI Agent Architecture</h3>
+                    <p style="color: rgba(255,255,255,0.8);">Premium tier. The Architect builds your complete AI ecosystem — voice agents, integrations, custom workflows.</p>
+                    <span style="color: rgba(255,255,255,0.6); font-size: 0.875rem;">$2K–5K setup + $500–1K/mo</span>
+                    <span class="service-link" style="color: white;">Call The Architect <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">Martial Solutions</div>
+            <div class="footer-links">
+                <a href="/">Home</a>
+                <a href="/voice-agents">Industries</a>
+                <a href="/about">About</a>
+                <a href="/#contact">Contact</a>
+                <a href="/privacy">Privacy</a>
+                <a href="/terms">Terms</a>
+            </div>
+            <div class="footer-copyright">&copy; 2026 Martial Solutions LLC</div>
+        </div>
+    </footer>
+</body>
+</html>

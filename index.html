@@ -2,6 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Martial Solutions — Colorado's AI Partner for Growing Businesses</title>
     <meta name="description" content="We help Front Range businesses work smarter with AI — from voice agents that answer your phones to marketing that runs itself. Your local AI partner in Colorado.">
@@ -679,6 +682,8 @@
         }
 
         /* Responsive */
+        .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+
         @media (max-width: 1024px) {
             .hero h1 { font-size: 2.75rem; }
             .services-grid { grid-template-columns: repeat(2, 1fr); }
@@ -709,11 +714,7 @@
     <nav class="nav">
         <div class="nav-container">
             <a href="/" class="nav-logo">
-                <svg viewBox="0 0 32 32" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="32" height="32" rx="8" fill="#0f172a"/>
-                    <path d="M10 12L16 8L22 12V20L16 24L10 20V12Z" stroke="white" stroke-width="2" fill="none"/>
-                    <circle cx="16" cy="16" r="3" fill="white"/>
-                </svg>
+                <img src="/assets/logo.png" alt="Martial Solutions" style="height: 40px; width: auto;">
                 Martial Solutions
             </a>
             
@@ -755,8 +756,8 @@
                     </div>
                 </div>
                 <a href="/about" class="nav-link">About</a>
-                <a href="#process" class="nav-link">How We Work</a>
-                <a href="#contact" class="nav-cta">Free Consultation</a>
+                <a href="#pricing" class="nav-link">Pricing</a>
+                <a href="tel:+17196313986" class="nav-cta">Talk to Our AI</a>
             </div>
         </div>
     </nav>
@@ -772,33 +773,34 @@
                 Proudly Serving the Colorado Front Range
             </div>
             
-            <h1>AI that actually <span>works</span> for small business.</h1>
-            
-            <p>We help Front Range businesses work smarter with AI — from voice agents that answer your phones to marketing that runs itself. Your local AI partner.</p>
+            <h1>Don't replace your people. <span>Unleash them.</span></h1>
+
+            <p>We build AI that works alongside your team — catching missed calls, automating follow-ups, and surfacing insights — so they can focus on what actually moves the needle.</p>
             
             <div class="hero-buttons">
-                <a href="#contact" class="btn-primary">
-                    Get a Free AI Audit
-                    <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor">
-                        <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
-                    </svg>
-                </a>
-                <a href="tel:+17193619042" class="btn-secondary">
+                <a href="tel:+17196313986" class="btn-primary">
                     <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor">
                         <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
                     </svg>
-                    Talk to Us
+                    Call The Architect — Free Trial
+                </a>
+                <a href="https://cal.com/anthony-abercrombie-kubii4/martial-solutions-intro-chat?overlayCalendar=true" target="_blank" class="btn-secondary">
+                    <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor">
+                        <rect x="3" y="4" width="14" height="12" rx="2" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                        <line x1="3" y1="8" x2="17" y2="8" stroke="currentColor" stroke-width="1.5"/>
+                    </svg>
+                    Or Book with Anthony
                 </a>
             </div>
 
             <div class="hero-proof">
                 <div class="hero-proof-item">
-                    <div class="hero-proof-value">6+</div>
-                    <div class="hero-proof-label">Colorado businesses served</div>
+                    <div class="hero-proof-value">10min</div>
+                    <div class="hero-proof-label">Call to custom AI agent</div>
                 </div>
                 <div class="hero-proof-item">
-                    <div class="hero-proof-value">48hr</div>
-                    <div class="hero-proof-label">Typical deployment time</div>
+                    <div class="hero-proof-value">Free</div>
+                    <div class="hero-proof-label">7-day trial, no risk</div>
                 </div>
                 <div class="hero-proof-item">
                     <div class="hero-proof-value">24/7</div>
@@ -812,8 +814,8 @@
     <section class="section" id="services">
         <div class="section-container">
             <div class="section-header">
-                <h2>AI solutions that drive real results</h2>
-                <p>We don't sell AI hype. We build practical tools that save you time, capture more leads, and help you grow.</p>
+                <h2>Your team, amplified</h2>
+                <p>We don't sell AI hype. We build practical tools that amplify what your people already do well — saving time, capturing leads, and helping you grow.</p>
             </div>
 
             <div class="services-grid">
@@ -984,8 +986,8 @@
             <div class="process-grid">
                 <div class="process-step">
                     <div class="process-number">1</div>
-                    <h3>Free Consultation</h3>
-                    <p>30 minutes to understand your business, challenges, and goals. We'll identify quick AI wins.</p>
+                    <h3>Call The Architect</h3>
+                    <p>Call (719) 631-3986. Our AI learns your business and builds your custom agent while you're on the phone. Free trial starts immediately.</p>
                 </div>
                 <div class="process-step">
                     <div class="process-number">2</div>
@@ -1003,6 +1005,63 @@
                     <p>Go live with confidence. We monitor, optimize, and support you ongoing.</p>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="section" id="pricing">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Simple, transparent pricing</h2>
+                <p>Start with a free trial. Pick a plan when you're ready. No surprises.</p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+                <div style="background: white; border: 1px solid var(--border); border-radius: 16px; padding: 32px; display: flex; flex-direction: column;">
+                    <div style="font-size: 0.8125rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); font-weight: 600; margin-bottom: 8px;">Starter</div>
+                    <div style="font-size: 2.5rem; font-weight: 700; margin-bottom: 4px;">$100<span style="font-size: 1rem; font-weight: 400; color: var(--text-muted);">/mo</span></div>
+                    <div style="font-size: 0.875rem; color: var(--text-muted); margin-bottom: 24px;">+ $500 one-time setup</div>
+                    <p style="color: var(--text-muted); font-size: 0.9375rem; margin-bottom: 24px; flex-grow: 1;">AI voice agent that answers your phones 24/7, qualifies leads, and books appointments. Never miss a call again.</p>
+                    <ul style="list-style: none; margin-bottom: 24px;">
+                        <li style="padding: 6px 0; padding-left: 24px; position: relative; font-size: 0.9375rem;"><span style="position: absolute; left: 0; color: var(--accent);">&#10003;</span> 24/7 AI phone answering</li>
+                        <li style="padding: 6px 0; padding-left: 24px; position: relative; font-size: 0.9375rem;"><span style="position: absolute; left: 0; color: var(--accent);">&#10003;</span> Lead qualification</li>
+                        <li style="padding: 6px 0; padding-left: 24px; position: relative; font-size: 0.9375rem;"><span style="position: absolute; left: 0; color: var(--accent);">&#10003;</span> Appointment booking</li>
+                        <li style="padding: 6px 0; padding-left: 24px; position: relative; font-size: 0.9375rem;"><span style="position: absolute; left: 0; color: var(--accent);">&#10003;</span> Daily performance reports</li>
+                    </ul>
+                    <a href="tel:+17196313986" style="display: block; text-align: center; background: var(--primary); color: white; padding: 14px; border-radius: 10px; font-weight: 600; text-decoration: none; transition: all 0.2s;">Try Free for 7 Days</a>
+                </div>
+
+                <div style="background: white; border: 2px solid var(--accent); border-radius: 16px; padding: 32px; display: flex; flex-direction: column; position: relative;">
+                    <div style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--accent); color: white; padding: 4px 16px; border-radius: 100px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase;">Most Popular</div>
+                    <div style="font-size: 0.8125rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); font-weight: 600; margin-bottom: 8px;">Growth</div>
+                    <div style="font-size: 2.5rem; font-weight: 700; margin-bottom: 4px;">$250<span style="font-size: 1rem; font-weight: 400; color: var(--text-muted);">/mo</span></div>
+                    <div style="font-size: 0.875rem; color: var(--text-muted); margin-bottom: 24px;">+ $500 one-time setup</div>
+                    <p style="color: var(--text-muted); font-size: 0.9375rem; margin-bottom: 24px; flex-grow: 1;">Everything in Starter plus automated SMS/email marketing pipeline. Your AI catches calls AND nurtures leads.</p>
+                    <ul style="list-style: none; margin-bottom: 24px;">
+                        <li style="padding: 6px 0; padding-left: 24px; position: relative; font-size: 0.9375rem;"><span style="position: absolute; left: 0; color: var(--accent);">&#10003;</span> Everything in Starter</li>
+                        <li style="padding: 6px 0; padding-left: 24px; position: relative; font-size: 0.9375rem;"><span style="position: absolute; left: 0; color: var(--accent);">&#10003;</span> SMS &amp; email follow-ups</li>
+                        <li style="padding: 6px 0; padding-left: 24px; position: relative; font-size: 0.9375rem;"><span style="position: absolute; left: 0; color: var(--accent);">&#10003;</span> Lead nurture campaigns</li>
+                        <li style="padding: 6px 0; padding-left: 24px; position: relative; font-size: 0.9375rem;"><span style="position: absolute; left: 0; color: var(--accent);">&#10003;</span> Marketing automation pipeline</li>
+                    </ul>
+                    <a href="tel:+17196313986" style="display: block; text-align: center; background: var(--accent); color: white; padding: 14px; border-radius: 10px; font-weight: 600; text-decoration: none; transition: all 0.2s;">Try Free for 7 Days</a>
+                </div>
+
+                <div style="background: white; border: 1px solid var(--border); border-radius: 16px; padding: 32px; display: flex; flex-direction: column;">
+                    <div style="font-size: 0.8125rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); font-weight: 600; margin-bottom: 8px;">Enterprise</div>
+                    <div style="font-size: 2.5rem; font-weight: 700; margin-bottom: 4px;">Custom</div>
+                    <div style="font-size: 0.875rem; color: var(--text-muted); margin-bottom: 24px;">Tailored to your business</div>
+                    <p style="color: var(--text-muted); font-size: 0.9375rem; margin-bottom: 24px; flex-grow: 1;">Full marketing + customer sales pipeline with CRM integration. The Architect builds your complete AI ecosystem.</p>
+                    <ul style="list-style: none; margin-bottom: 24px;">
+                        <li style="padding: 6px 0; padding-left: 24px; position: relative; font-size: 0.9375rem;"><span style="position: absolute; left: 0; color: var(--accent);">&#10003;</span> Everything in Growth</li>
+                        <li style="padding: 6px 0; padding-left: 24px; position: relative; font-size: 0.9375rem;"><span style="position: absolute; left: 0; color: var(--accent);">&#10003;</span> Full CRM integration</li>
+                        <li style="padding: 6px 0; padding-left: 24px; position: relative; font-size: 0.9375rem;"><span style="position: absolute; left: 0; color: var(--accent);">&#10003;</span> Custom AI workflows</li>
+                        <li style="padding: 6px 0; padding-left: 24px; position: relative; font-size: 0.9375rem;"><span style="position: absolute; left: 0; color: var(--accent);">&#10003;</span> Dedicated support</li>
+                    </ul>
+                    <a href="https://cal.com/anthony-abercrombie-kubii4/martial-solutions-intro-chat?overlayCalendar=true" target="_blank" style="display: block; text-align: center; background: var(--primary); color: white; padding: 14px; border-radius: 10px; font-weight: 600; text-decoration: none; transition: all 0.2s;">Talk to Anthony</a>
+                </div>
+            </div>
+
+            <p style="text-align: center; color: var(--text-muted); margin-top: 24px; font-size: 0.9375rem;">Every plan starts with a free 7-day trial. Call <a href="tel:+17196313986" style="color: var(--accent); font-weight: 600;">(719) 631-3986</a> and your AI agent is live within the hour.</p>
         </div>
     </section>
 
@@ -1042,14 +1101,83 @@
 
     <!-- CTA Section -->
     <section class="cta-section" id="contact">
-        <h2>Ready to put AI to work for your business?</h2>
-        <p>Book a free 30-minute consultation. We'll show you exactly where AI can help — no pressure, no jargon, just straight talk.</p>
-        <a href="tel:+17193619042" class="btn-primary">
-            <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor">
-                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
-            </svg>
-            Call (719) 361-9042
-        </a>
+        <h2>Ready to unleash your team?</h2>
+        <p>Call The Architect — our AI builds your custom agent in 10 minutes. Try it free for a week. No commitment, no risk.</p>
+        
+        <div style="display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; margin: 32px 0;">
+            <a href="tel:+17196313986" class="btn-primary" style="background: white; color: var(--accent);">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                </svg>
+                Call (719) 631-3986
+            </a>
+            <a href="https://cal.com/anthony-abercrombie-kubii4/martial-solutions-intro-chat?overlayCalendar=true" target="_blank" class="btn-primary">
+                <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor">
+                    <rect x="3" y="4" width="14" height="12" rx="2" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                    <line x1="3" y1="8" x2="17" y2="8" stroke="currentColor" stroke-width="1.5"/>
+                    <line x1="7" y1="2" x2="7" y2="5" stroke="currentColor" stroke-width="1.5"/>
+                    <line x1="13" y1="2" x2="13" y2="5" stroke="currentColor" stroke-width="1.5"/>
+                </svg>
+                Book a Call with Anthony
+            </a>
+        </div>
+
+        <div style="max-width: 500px; margin: 40px auto 0; text-align: left;">
+            <p style="text-align: center; color: rgba(255,255,255,0.7); margin-bottom: 20px;">Or leave a message:</p>
+            <form id="contact-form" style="display: flex; flex-direction: column; gap: 16px;">
+                <input type="text" id="cf-name" placeholder="Your name" required style="padding: 14px 18px; border-radius: 10px; border: none; font-size: 1rem;">
+                <input type="email" id="cf-email" placeholder="Your email" required style="padding: 14px 18px; border-radius: 10px; border: none; font-size: 1rem;">
+                <input type="tel" id="cf-phone" placeholder="Phone number (optional)" style="padding: 14px 18px; border-radius: 10px; border: none; font-size: 1rem;">
+                <textarea id="cf-message" placeholder="How can we help?" rows="3" style="padding: 14px 18px; border-radius: 10px; border: none; font-size: 1rem; resize: vertical;"></textarea>
+                <button type="submit" class="btn-primary" style="justify-content: center;">Send Message</button>
+                <p id="cf-status" style="text-align: center; margin: 0; display: none;"></p>
+            </form>
+            <script>
+            document.getElementById('contact-form').addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const btn = e.target.querySelector('button');
+                const status = document.getElementById('cf-status');
+                btn.disabled = true;
+                btn.textContent = 'Sending...';
+                status.style.display = 'none';
+                
+                const nameParts = document.getElementById('cf-name').value.trim().split(' ');
+                const firstName = nameParts[0] || '';
+                const lastName = nameParts.slice(1).join(' ') || '';
+                
+                try {
+                    const res = await fetch('/api/lead', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            firstName,
+                            lastName,
+                            email: document.getElementById('cf-email').value,
+                            phone: document.getElementById('cf-phone').value,
+                            source: 'Website Contact Form',
+                            tags: ['website-lead'],
+                            customFields: [{ key: 'message', value: document.getElementById('cf-message').value }]
+                        })
+                    });
+                    
+                    if (res.ok) {
+                        status.textContent = '✓ Message sent! We\'ll be in touch soon.';
+                        status.style.color = '#4ade80';
+                        e.target.reset();
+                    } else {
+                        throw new Error('Failed');
+                    }
+                } catch (err) {
+                    status.textContent = 'Something went wrong. Please call us instead.';
+                    status.style.color = '#f87171';
+                }
+                
+                status.style.display = 'block';
+                btn.disabled = false;
+                btn.textContent = 'Send Message';
+            });
+            </script>
+        </div>
     </section>
 
     <!-- Footer -->
@@ -1057,7 +1185,7 @@
         <div class="footer-container">
             <div class="footer-brand">
                 <h3>Martial Solutions</h3>
-                <p>Colorado's AI partner for growing businesses. We help Front Range companies work smarter with AI.</p>
+                <p>AI for the team you already trust. We help Front Range companies work smarter with AI.</p>
                 <div class="footer-location">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
@@ -1087,12 +1215,14 @@
                 <a href="/about">About Us</a>
                 <a href="#process">How We Work</a>
                 <a href="#contact">Contact</a>
+                <a href="/privacy">Privacy Policy</a>
+                <a href="/terms">Terms of Service</a>
             </div>
         </div>
         
         <div class="footer-bottom">
-            <p>&copy; 2026 Martial Solutions. All rights reserved.</p>
-            <p>Proudly serving the Colorado Front Range</p>
+            <p>&copy; 2026 Martial Solutions LLC. All rights reserved.</p>
+            <p><a href="/privacy" style="color: rgba(255,255,255,0.5);">Privacy</a> · <a href="/terms" style="color: rgba(255,255,255,0.5);">Terms</a></p>
         </div>
     </footer>
 

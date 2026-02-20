@@ -2,9 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | Martial Solutions — Colorado's AI Partner</title>
-    <meta name="description" content="Meet the team behind Martial Solutions. Colorado founders combining enterprise AI expertise with 25+ years of defense technology leadership.">
+    <title>About Us | Martial Solutions — Don't Replace Your People. Unleash Them.</title>
+    <meta name="description" content="Meet the team behind Martial Solutions. 25+ years of defense technology leadership combined with enterprise AI expertise — now building AI for Colorado businesses.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
@@ -22,26 +25,40 @@
             --colorado: #c8102e;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', -apple-system, sans-serif; color: var(--text); background: var(--bg); line-height: 1.6; }
-        
+        body { font-family: 'Inter', -apple-system, sans-serif; color: var(--text); background: var(--bg); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
         .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); }
         .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 72px; }
         .nav-logo { font-weight: 700; font-size: 1.25rem; color: var(--primary); text-decoration: none; display: flex; align-items: center; gap: 10px; }
-        .nav-logo svg { width: 32px; height: 32px; }
+        .nav-logo img { height: 36px; width: auto; }
         .nav-links { display: flex; align-items: center; gap: 8px; }
         .nav-link { color: var(--text-muted); text-decoration: none; font-size: 0.9375rem; font-weight: 500; padding: 8px 16px; border-radius: 6px; transition: all 0.2s; }
         .nav-link:hover { color: var(--text); background: var(--bg-subtle); }
+        .nav-dropdown { position: relative; }
+        .nav-dropdown-trigger { display: flex; align-items: center; gap: 4px; cursor: pointer; }
+        .nav-dropdown-trigger svg { width: 16px; height: 16px; transition: transform 0.2s; }
+        .nav-dropdown:hover .nav-dropdown-trigger svg { transform: rotate(180deg); }
+        .nav-dropdown-menu { position: absolute; top: 100%; left: 50%; transform: translateX(-50%); padding-top: 12px; opacity: 0; visibility: hidden; transition: all 0.2s; }
+        .nav-dropdown:hover .nav-dropdown-menu { opacity: 1; visibility: visible; }
+        .nav-dropdown-content { background: white; border: 1px solid var(--border); border-radius: 12px; padding: 8px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); min-width: 260px; }
+        .nav-dropdown-item { display: block; padding: 10px 14px; color: var(--text); text-decoration: none; font-size: 0.9375rem; border-radius: 8px; transition: background 0.15s; }
+        .nav-dropdown-item:hover { background: var(--bg-subtle); }
+        .nav-dropdown-item span { display: block; font-size: 0.8125rem; color: var(--text-muted); font-weight: 400; margin-top: 2px; }
         .nav-cta { background: var(--primary); color: white; padding: 10px 20px; border-radius: 8px; font-weight: 600; text-decoration: none; transition: all 0.2s; }
         .nav-cta:hover { background: var(--secondary); }
 
-        .hero { padding: 140px 24px 80px; background: var(--bg-subtle); }
+        .hero { padding: 140px 24px 80px; background: linear-gradient(180deg, var(--bg-subtle) 0%, var(--bg) 100%); }
         .hero-container { max-width: 800px; margin: 0 auto; text-align: center; }
         .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(200, 16, 46, 0.1); color: var(--colorado); padding: 8px 16px; border-radius: 100px; font-size: 0.875rem; font-weight: 600; margin-bottom: 24px; }
         .hero h1 { font-family: 'Playfair Display', serif; font-size: 3rem; font-weight: 700; margin-bottom: 20px; }
-        .hero p { font-size: 1.25rem; color: var(--text-muted); max-width: 600px; margin: 0 auto; }
+        .hero p { font-size: 1.25rem; color: var(--text-muted); max-width: 650px; margin: 0 auto; }
 
         .section { padding: 80px 24px; }
         .section-container { max-width: 1000px; margin: 0 auto; }
+
+        .ethos-section { background: var(--bg-subtle); border-radius: 20px; padding: 60px; margin-bottom: 80px; text-align: center; }
+        .ethos-section blockquote { font-family: 'Playfair Display', serif; font-size: 1.75rem; font-weight: 600; color: var(--primary); line-height: 1.4; margin-bottom: 20px; }
+        .ethos-section p { font-size: 1.0625rem; color: var(--text-muted); max-width: 700px; margin: 0 auto; line-height: 1.8; }
 
         .story-section { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; margin-bottom: 80px; }
         .story-content h2 { font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 20px; }
@@ -59,7 +76,8 @@
         .team-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; }
         .team-card { background: white; border: 1px solid var(--border); border-radius: 20px; padding: 40px; }
         .team-card-header { display: flex; align-items: center; gap: 20px; margin-bottom: 24px; }
-        .team-avatar { width: 80px; height: 80px; background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; color: white; font-weight: 700; flex-shrink: 0; }
+        .team-avatar { width: 80px; height: 80px; background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; color: white; font-weight: 700; flex-shrink: 0; overflow: hidden; }
+        .team-avatar img { width: 100%; height: 100%; object-fit: cover; }
         .team-card-header-info h3 { font-size: 1.5rem; font-weight: 700; margin-bottom: 4px; }
         .team-card-header-info .role { color: var(--accent); font-weight: 600; font-size: 0.9375rem; }
         .team-card p { color: var(--text-muted); font-size: 0.9375rem; line-height: 1.7; margin-bottom: 20px; }
@@ -67,7 +85,7 @@
         .team-card .highlights h4 { font-size: 0.8125rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); margin-bottom: 12px; }
         .team-card .highlights ul { list-style: none; }
         .team-card .highlights li { font-size: 0.9375rem; padding: 6px 0; padding-left: 20px; position: relative; }
-        .team-card .highlights li::before { content: "→"; position: absolute; left: 0; color: var(--accent); }
+        .team-card .highlights li::before { content: "\2192"; position: absolute; left: 0; color: var(--accent); }
         .team-card .credentials { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
         .credential { background: var(--bg-subtle); padding: 6px 12px; border-radius: 6px; font-size: 0.8125rem; color: var(--text-muted); }
         .team-links { display: flex; gap: 12px; }
@@ -80,19 +98,29 @@
         .values-header h2 { font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 12px; }
         .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
         .value-item { text-align: center; }
-        .value-icon { font-size: 2rem; margin-bottom: 12px; }
+        .value-icon { margin-bottom: 12px; color: #2563eb; }
         .value-item h3 { font-size: 1.125rem; font-weight: 600; margin-bottom: 8px; }
         .value-item p { color: var(--text-muted); font-size: 0.9375rem; }
 
-        .cta-section { background: var(--primary); color: white; padding: 80px 24px; text-align: center; margin-top: 80px; }
+        .cta-section { background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: white; padding: 80px 24px; text-align: center; margin-top: 80px; }
         .cta-section h2 { font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 16px; }
-        .cta-section p { opacity: 0.8; margin-bottom: 24px; max-width: 500px; margin-left: auto; margin-right: auto; }
-        .cta-section .btn { display: inline-flex; align-items: center; gap: 8px; background: white; color: var(--primary); padding: 14px 24px; border-radius: 8px; font-weight: 600; text-decoration: none; transition: all 0.2s; }
-        .cta-section .btn:hover { background: var(--bg-subtle); transform: translateY(-2px); }
+        .cta-section p { opacity: 0.8; margin-bottom: 32px; max-width: 500px; margin-left: auto; margin-right: auto; font-size: 1.125rem; }
+        .cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+        .btn-white { display: inline-flex; align-items: center; gap: 8px; background: white; color: var(--primary); padding: 14px 24px; border-radius: 8px; font-weight: 600; text-decoration: none; transition: all 0.2s; }
+        .btn-white:hover { background: var(--bg-subtle); transform: translateY(-2px); }
+        .btn-outline { display: inline-flex; align-items: center; gap: 8px; background: transparent; color: white; padding: 14px 24px; border-radius: 8px; font-weight: 600; text-decoration: none; border: 1px solid rgba(255,255,255,0.3); transition: all 0.2s; }
+        .btn-outline:hover { background: rgba(255,255,255,0.1); transform: translateY(-2px); }
 
-        .footer { background: var(--bg-subtle); padding: 40px 24px; text-align: center; border-top: 1px solid var(--border); }
-        .footer p { color: var(--text-muted); font-size: 0.875rem; }
-        .footer a { color: var(--text); text-decoration: none; }
+        .footer { background: var(--bg-subtle); padding: 60px 24px 40px; border-top: 1px solid var(--border); }
+        .footer-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px; }
+        .footer-brand h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 12px; }
+        .footer-brand p { color: var(--text-muted); font-size: 0.9375rem; max-width: 280px; margin-bottom: 16px; }
+        .footer-location { display: flex; align-items: center; gap: 8px; font-size: 0.875rem; color: var(--text-muted); }
+        .footer-location svg { width: 16px; height: 16px; }
+        .footer-column h4 { font-size: 0.875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); margin-bottom: 16px; }
+        .footer-column a { display: block; color: var(--text); text-decoration: none; font-size: 0.9375rem; margin-bottom: 10px; transition: color 0.2s; }
+        .footer-column a:hover { color: var(--accent); }
+        .footer-bottom { max-width: 1200px; margin: 40px auto 0; padding-top: 24px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; font-size: 0.875rem; color: var(--text-muted); }
 
         @media (max-width: 768px) {
             .nav-links { display: none; }
@@ -102,6 +130,11 @@
             .team-grid { grid-template-columns: 1fr; }
             .values-grid { grid-template-columns: 1fr; }
             .values-section { padding: 40px 24px; }
+            .ethos-section { padding: 40px 24px; }
+            .ethos-section blockquote { font-size: 1.375rem; }
+            .footer-container { grid-template-columns: 1fr; gap: 40px; }
+            .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
+            .cta-buttons { flex-direction: column; align-items: center; }
         }
     </style>
 </head>
@@ -109,14 +142,49 @@
     <nav class="nav">
         <div class="nav-container">
             <a href="/" class="nav-logo">
-                <svg viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#0f172a"/><path d="M10 12L16 8L22 12V20L16 24L10 20V12Z" stroke="white" stroke-width="2" fill="none"/><circle cx="16" cy="16" r="3" fill="white"/></svg>
+                <img src="/assets/logo.png" alt="Martial Solutions" style="height: 40px; width: auto;">
                 Martial Solutions
             </a>
             <div class="nav-links">
-                <a href="/" class="nav-link">Home</a>
-                <a href="/#services" class="nav-link">Services</a>
-                <a href="/voice-agents" class="nav-link">Voice Agents</a>
-                <a href="/#contact" class="nav-cta">Free Consultation</a>
+                <div class="nav-dropdown">
+                    <a href="/services" class="nav-link nav-dropdown-trigger">
+                        Services
+                        <svg viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                        </svg>
+                    </a>
+                    <div class="nav-dropdown-menu">
+                        <div class="nav-dropdown-content">
+                            <a href="/services/voice-agents" class="nav-dropdown-item">
+                                Voice AI Agents
+                                <span>Never miss another call</span>
+                            </a>
+                            <a href="/services/marketing-automation" class="nav-dropdown-item">
+                                AI Marketing Automation
+                                <span>Marketing that runs itself</span>
+                            </a>
+                            <a href="/services/ai-audit" class="nav-dropdown-item">
+                                AI Business Audit
+                                <span>Find your AI opportunities</span>
+                            </a>
+                            <a href="/services/geo-optimization" class="nav-dropdown-item">
+                                GEO Optimization
+                                <span>Get found by AI search</span>
+                            </a>
+                            <a href="/services/personal-assistant" class="nav-dropdown-item">
+                                AI Personal Assistant
+                                <span>Your own AI right hand</span>
+                            </a>
+                            <a href="/services/custom-solutions" class="nav-dropdown-item">
+                                Custom Solutions
+                                <span>Built for your needs</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <a href="/about" class="nav-link">About</a>
+                <a href="/voice-agents" class="nav-link">Industries</a>
+                <a href="tel:+17196313986" class="nav-cta">Talk to Our AI</a>
             </div>
         </div>
     </nav>
@@ -132,20 +200,26 @@
                 </svg>
                 Meet the Team
             </div>
-            <h1>Enterprise expertise. Local focus.</h1>
-            <p>We've built AI systems at Planet Labs, advised Fortune 500 AI teams, and secured F-35 fighter jet programs. Now we're bringing that expertise to Colorado businesses.</p>
+            <h1>Don't replace your people. Unleash them.</h1>
+            <p>We've spent decades building mission-critical systems for the DoD and Fortune 500. Now we're bringing that same discipline to Colorado businesses — with AI that amplifies your team, not replaces it.</p>
         </div>
     </section>
 
     <section class="section">
         <div class="section-container">
+
+            <div class="ethos-section">
+                <blockquote>"Your people are your business."</blockquote>
+                <p>We build AI that works alongside your team — handling the repetitive, catching the missed calls, surfacing the insights — so they can focus on what actually moves the needle. Every AI company wants to replace your workforce. We'd rather arm it.</p>
+            </div>
+
             <div class="story-section">
                 <div class="story-content">
                     <h2>Why we started Martial Solutions</h2>
                     <p>We kept seeing the same problem: small businesses drowning in missed calls, manual follow-ups, and repetitive tasks. Meanwhile, enterprise companies were deploying AI that actually worked.</p>
                     <p>The gap wasn't intelligence — it was access. The tools existed, but nobody was making them accessible to the plumber, the salon owner, the local gym.</p>
                     <p>Between us, we have decades of experience building mission-critical systems — from satellite imagery ML at Planet Labs to cybersecurity for the F-35 program. We know what "production-grade" means.</p>
-                    <p>Martial Solutions exists to bridge that gap. Enterprise-quality AI, made practical for Colorado businesses.</p>
+                    <p>Martial Solutions exists to bridge that gap. Enterprise-quality AI, made practical for Colorado businesses. Your team, amplified.</p>
                 </div>
                 <div class="story-image">
                     <div class="story-image-emoji">🏔️</div>
@@ -163,14 +237,14 @@
                 <div class="team-grid">
                     <div class="team-card">
                         <div class="team-card-header">
-                            <div class="team-avatar">AA</div>
+                            <div class="team-avatar"><img src="/assets/anthony.png" alt="Anthony Abercrombie"></div>
                             <div class="team-card-header-info">
                                 <h3>Anthony Abercrombie</h3>
                                 <div class="role">Co-Founder & Technical Lead</div>
                             </div>
                         </div>
                         <p>AI Solutions Engineer helping enterprise teams at Uber, Tempus, and Lowe's implement LLM observability and evaluation. Previously built computer vision models processing satellite imagery at Planet Labs and architected data pipelines handling petabytes of daily traffic at Bitly.</p>
-                        
+
                         <div class="highlights">
                             <h4>Notable Work</h4>
                             <ul>
@@ -197,22 +271,25 @@
 
                     <div class="team-card">
                         <div class="team-card-header">
-                            <div class="team-avatar">AG</div>
+                            <div class="team-avatar"><img src="/assets/adrian.png" alt="Adrian Guy"></div>
                             <div class="team-card-header-info">
                                 <h3>Adrian Guy</h3>
                                 <div class="role">Co-Founder & Operations Lead</div>
                             </div>
                         </div>
-                        <p>Cybersecurity leader with 25+ years of government and defense IT experience. Senior Lead Technologist at Booz Allen Hamilton leading cybersecurity initiatives across Department of Defense programs including the F-35 Joint Program Office, Platform One, and National Space Defense Center.</p>
-                        
+                        <p>Cybersecurity leader with 25+ years of government and defense IT experience, now applying that same discipline to building reliable AI infrastructure for businesses. Co-founded Martial Solutions during a sabbatical from Booz Allen Hamilton, where he serves as Senior Lead Technologist supporting F-35 JPO, Platform One, and National Space Defense Center programs.</p>
+
+                        <p>The same rigor required to architect secure cloud systems for the Department of Defense translates directly to building AI that small businesses can depend on. Adrian also purchased stake in <a href="https://threadedroots.org/" target="_blank" style="color: var(--accent);">Threaded Roots ABA Collective</a>, an autism therapy clinic — a deeply personal investment that reflects the family's commitment to disability care and community support.</p>
+
                         <div class="highlights">
                             <h4>Notable Work</h4>
                             <ul>
-                                <li>Primary author for 60% of F-35 JPO RMF documentation (600+ pages)</li>
-                                <li>Co-authored Joint SAP Implementation Guide (JSIG)</li>
-                                <li>Migrated 21 DoD programs to cloud with 30% cost savings</li>
-                                <li>First encrypted SAP transport system ATO at AF SAPCO</li>
+                                <li>Authored 600+ pages of RMF Body of Evidence for F-35 JPO</li>
+                                <li>Co-authored Joint SAP Implementation Guide (JSIG) &amp; AF SAP Cyber Policy</li>
+                                <li>Managed portfolio of 21 DoD cloud customers at FENCES Program</li>
                                 <li>"Passionate Service" award — FENCES Program</li>
+                                <li>Led Secure Integration Cloud supporting 4,000+ users (DISA)</li>
+                                <li>Cyber SME at U.S. European Command (6 years, Stuttgart)</li>
                             </ul>
                         </div>
 
@@ -221,6 +298,7 @@
                             <span class="credential">RMF Subject Matter Expert</span>
                             <span class="credential">AWS / Azure / Platform One</span>
                             <span class="credential">DevSecOps</span>
+                            <span class="credential">B.S. Zoology, U of Hawaii</span>
                         </div>
                         <div class="team-links">
                             <a href="https://www.linkedin.com/in/adrian-guy-32086013b/" target="_blank" aria-label="LinkedIn">
@@ -237,17 +315,17 @@
                 </div>
                 <div class="values-grid">
                     <div class="value-item">
-                        <div class="value-icon">🎯</div>
+                        <div class="value-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
                         <h3>Results over hype</h3>
                         <p>We don't sell "AI transformation." We build tools that save you time and make you money. Period.</p>
                     </div>
                     <div class="value-item">
-                        <div class="value-icon">🤝</div>
+                        <div class="value-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.42 4.58a5.4 5.4 0 0 0-7.65 0l-.77.78-.77-.78a5.4 5.4 0 0 0-7.65 0C1.46 6.7 1.33 10.28 4 13l8 8 8-8c2.67-2.72 2.54-6.3.42-8.42z"/></svg></div>
                         <h3>Partners, not vendors</h3>
-                        <p>We're invested in your success. If it doesn't work for you, it doesn't work for us.</p>
+                        <p>We're invested in your success. We don't replace your staff. We make them unstoppable.</p>
                     </div>
                     <div class="value-item">
-                        <div class="value-icon">🔧</div>
+                        <div class="value-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
                         <h3>Built to last</h3>
                         <p>No duct tape solutions. We build systems that grow with your business — the same way we built systems for the DoD.</p>
                     </div>
@@ -257,16 +335,63 @@
     </section>
 
     <section class="cta-section">
-        <h2>Let's talk about your business</h2>
-        <p>30 minutes. No pitch deck. Just a conversation about where AI can actually help you.</p>
-        <a href="/#contact" class="btn">
-            <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
-            Schedule a Call
-        </a>
+        <h2>Ready to unleash your team?</h2>
+        <p>Call The Architect — our AI will learn your business and build your custom agent in 10 minutes. Free for a week.</p>
+        <div class="cta-buttons">
+            <a href="tel:+17196313986" class="btn-white">
+                <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+                Call (719) 631-3986
+            </a>
+            <a href="https://cal.com/anthony-abercrombie-kubii4/martial-solutions-intro-chat?overlayCalendar=true" target="_blank" class="btn-outline">
+                <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="14" height="12" rx="2"/><line x1="3" y1="8" x2="17" y2="8"/></svg>
+                Or Book with Anthony
+            </a>
+        </div>
     </section>
 
     <footer class="footer">
-        <p>&copy; 2026 <a href="/">Martial Solutions</a>. Colorado's AI Partner for Growing Businesses.</p>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h3>Martial Solutions</h3>
+                <p>AI for the team you already trust. We help Front Range companies work smarter with AI.</p>
+                <div class="footer-location">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                        <circle cx="12" cy="10" r="3"/>
+                    </svg>
+                    Colorado Springs, CO
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h4>Services</h4>
+                <a href="/services/voice-agents">Voice AI Agents</a>
+                <a href="/services/marketing-automation">Marketing Automation</a>
+                <a href="/services/ai-audit">AI Business Audit</a>
+                <a href="/services/geo-optimization">GEO Optimization</a>
+            </div>
+
+            <div class="footer-column">
+                <h4>More Services</h4>
+                <a href="/services/personal-assistant">AI Personal Assistant</a>
+                <a href="/services/custom-solutions">Custom Solutions</a>
+                <a href="/voice-agents">Voice Agent Demos</a>
+            </div>
+
+            <div class="footer-column">
+                <h4>Company</h4>
+                <a href="/about">About Us</a>
+                <a href="/#process">How We Work</a>
+                <a href="/#contact">Contact</a>
+                <a href="/privacy">Privacy Policy</a>
+                <a href="/terms">Terms of Service</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Martial Solutions LLC. All rights reserved.</p>
+            <p><a href="/privacy">Privacy</a> &middot; <a href="/terms">Terms</a></p>
+        </div>
     </footer>
 </body>
 </html>
